@@ -1,0 +1,30 @@
+{
+  "name": "sort-css-media-queries",
+  "version": "1.0.0",
+  "description": "The custom `sort` method for `css-mqpacker` or `pleeease` (which uses css-mqpacker) or, perhaps, something else ))",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutchenkoOleg/sort-css-media-queries.git"
+  },
+  "keywords": [
+    "css-mqpacker",
+    "node-css-mqpacker",
+    "pleeease",
+    "mq",
+    "media",
+    "queries"
+  ],
+  "author": "Oleg Dutchenko <dutchenko.o.wezom@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dutchenkoOleg/sort-css-media-queries/issues"
+  },
+  "engines": {
+    "node": ">= 6.10.2"
+  },
+  "homepage": "https://github.com/dutchenkoOleg/sort-css-media-queries#readme"
+}
