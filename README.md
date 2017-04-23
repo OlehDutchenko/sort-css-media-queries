@@ -1,6 +1,6 @@
 # sort-css-media-queries
 
-![npm](https://img.shields.io/badge/node-6.10.2-yellow.svg)
+![npm](https://img.shields.io/badge/node-6.3.0-yellow.svg)
 ![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)
 
 The custom `sort` method for [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) or [`pleeease`](https://www.npmjs.com/package/pleeease) (which uses css-mqpacker) or, perhaps, something else ))

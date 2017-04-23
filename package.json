@@ -1,6 +1,6 @@
 {
   "name": "sort-css-media-queries",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "The custom `sort` method for `css-mqpacker` or `pleeease` (which uses css-mqpacker) or, perhaps, something else ))",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "url": "https://github.com/dutchenkoOleg/sort-css-media-queries/issues"
   },
   "engines": {
-    "node": ">= 6.10.2"
+    "node": ">= 6.3.0"
   },
   "homepage": "https://github.com/dutchenkoOleg/sort-css-media-queries#readme"
 }
