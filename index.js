@@ -35,7 +35,7 @@ const isMaxHeight = testQuery(maxMinHeight, minMaxHeight, maxHeight);
  * @return {number} 1 / 0 / -1
  * @sourcecode
  */
-export default function (a, b) {
+module.exports = function (a, b) {
 	let minA = isMinWidth(a) || isMinHeight(a);
 	let maxA = isMaxWidth(a) || isMaxHeight(a);
 	
@@ -65,7 +65,7 @@ export default function (a, b) {
 		return -1;
 	}
 	return a.localeCompare(b);
-}
+};
 
 /**
  * Wrapper for creating test functions
