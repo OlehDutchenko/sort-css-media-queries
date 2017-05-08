@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * The custom `sort` method for
  * for the [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) or
@@ -8,9 +6,14 @@
  *
  * @module sort-css-media-queries
  * @author Oleg Dutchenko <dutchenko.o.wezom@gmail.com>
- * @version 1.0.0
- * @sourcecode |+16
+ * @version 1.1.1
  */
+
+'use strict';
+
+// ----------------------------------------
+// Private
+// ----------------------------------------
 
 const minMaxWidth = /(!?\(\s*min(-device-)?-width).+\(\s*max(-device)?-width/;
 const minWidth = /\(\s*min(-device)?-width/;
@@ -29,76 +32,13 @@ const isMinHeight = testQuery(minMaxHeight, maxMinHeight, minHeight);
 const isMaxHeight = testQuery(maxMinHeight, minMaxHeight, maxHeight);
 
 /**
- * Sorting an array with media queries
- * @param {string} a
- * @param {string} b
- * @return {number} 1 / 0 / -1
- * @sourcecode
- */
-module.exports = function (a, b) {
-	let minA = isMinWidth(a) || isMinHeight(a);
-	let maxA = isMaxWidth(a) || isMaxHeight(a);
-	
-	let minB = isMinWidth(b) || isMinHeight(b);
-	let maxB = isMaxWidth(b) || isMaxHeight(b);
-	
-	if (minA && maxB) {
-		return -1;
-	}
-	if (maxA && minB) {
-		return 1;
-	}
-	
-	let lengthA = getQueryLength(a);
-	let lengthB = getQueryLength(b);
-	
-	if (lengthA > lengthB) {
-		if (maxA) {
-			return -1;
-		}
-		return 1;
-	}
-	if (lengthA < lengthB) {
-		if (maxA) {
-			return 1;
-		}
-		return -1;
-	}
-	return a.localeCompare(b);
-};
-
-/**
- * Wrapper for creating test functions
- * @private
- * @param {RegExp} doubleTestTrue
- * @param {RegExp} doubleTestFalse
- * @param {RegExp} singleTest
- * @return {Function}
- * @sourcecode
- */
-function testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
-	/**
-	 * @param {string} query
-	 * @return {boolean}
-	 */
-	return function(query) {
-		if ( doubleTestTrue.test(query) ) {
-			return true;
-		} else if ( doubleTestFalse.test(query) ) {
-			return false;
-		}
-		return singleTest.test(query);
-	}
-}
-
-/**
  * Obtain the length of the media request in pixels.
  * Copy from original source `function inspectLength (length)`
  * {@link https://github.com/hail2u/node-css-mqpacker/blob/master/index.js#L58}
  * @private
  * @param {string} length
  * @return {number}
- * @sourcecode
+ * @sourceCode
  */
 function getQueryLength (length) {
 	length = /(-?\d*\.?\d+)(ch|em|ex|px|rem)/.exec(length);
@@ -131,3 +71,72 @@ function getQueryLength (length) {
 
 	return num;
 }
+
+/**
+ * Wrapper for creating test functions
+ * @private
+ * @param {RegExp} doubleTestTrue
+ * @param {RegExp} doubleTestFalse
+ * @param {RegExp} singleTest
+ * @return {Function}
+ * @sourceCode
+ */
+function testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
+	/**
+	 * @param {string} query
+	 * @return {boolean}
+	 */
+	return function(query) {
+		if ( doubleTestTrue.test(query) ) {
+			return true;
+		} else if ( doubleTestFalse.test(query) ) {
+			return false;
+		}
+		return singleTest.test(query);
+	}
+}
+
+
+
+// ----------------------------------------
+// Exports
+// ----------------------------------------
+
+/**
+ * Sorting an array with media queries
+ * @param {string} a
+ * @param {string} b
+ * @return {number} 1 / 0 / -1
+ * @sourceCode
+ */
+module.exports = function (a, b) {
+	let minA = isMinWidth(a) || isMinHeight(a);
+	let maxA = isMaxWidth(a) || isMaxHeight(a);
+	
+	let minB = isMinWidth(b) || isMinHeight(b);
+	let maxB = isMaxWidth(b) || isMaxHeight(b);
+	
+	if (minA && maxB) {
+		return -1;
+	}
+	if (maxA && minB) {
+		return 1;
+	}
+	
+	let lengthA = getQueryLength(a);
+	let lengthB = getQueryLength(b);
+	
+	if (lengthA > lengthB) {
+		if (maxA) {
+			return -1;
+		}
+		return 1;
+	}
+	if (lengthA < lengthB) {
+		if (maxA) {
+			return 1;
+		}
+		return -1;
+	}
+	return a.localeCompare(b);
+};
