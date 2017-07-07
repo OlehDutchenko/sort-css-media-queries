@@ -1,7 +1,7 @@
 {
   "name": "sort-css-media-queries",
-  "version": "1.1.9",
-  "description": "The custom `sort` method for `css-mqpacker` or `pleeease` (which uses css-mqpacker) or, perhaps, something else ))",
+  "version": "1.1.20",
+  "description": "The custom `sort` method of CSS media queries for `css-mqpacker` or `pleeease` (which uses css-mqpacker) or, perhaps, something else ))",
   "main": "index.js",
   "scripts": {
     "test": "happiness --verbose | snazzy && node ./tests/index.js",
@@ -12,12 +12,16 @@
     "url": "git+https://github.com/dutchenkoOleg/sort-css-media-queries.git"
   },
   "keywords": [
+    "postcss",
     "css-mqpacker",
     "node-css-mqpacker",
     "pleeease",
+    "mobile-first",
+    "combine",
     "mq",
     "media",
-    "queries"
+    "queries",
+    "sort"
   ],
   "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
   "license": "MIT",
