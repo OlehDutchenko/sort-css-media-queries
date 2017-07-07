@@ -2,8 +2,12 @@
 
 ![npm](https://img.shields.io/badge/node-6.3.0-yellow.svg)
 ![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)
+![license](https://img.shields.io/badge/License-MIT-orange.svg)
+[![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
 
-The custom `sort` method for [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) or [`pleeease`](https://www.npmjs.com/package/pleeease) (which uses css-mqpacker) or, perhaps, something else ))
+> The custom `sort` method for [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) or [`pleeease`](https://www.npmjs.com/package/pleeease) (which uses css-mqpacker) or, perhaps, something else ))
+
+[![js happiness style](https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg)](https://github.com/JedWatson/happiness)
 
 ## Installing
 
@@ -42,7 +46,12 @@ it's use es6 syntax
 
 ## Tests
 
-Sorry but here no tests yet.
+1. `npm test` for testing js code style and test sorting method
+1. `npm run fix` for automatically fix most of problems with **js code style** 
+
+## Changelog
+
+Please read [CHANGELOG.md](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CHANGELOG.md)
 
 
 ## Contributing
