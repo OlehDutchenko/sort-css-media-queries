@@ -51,20 +51,20 @@ function getQueryLength (length) {
 	let unit = length[2];
 
 	switch (unit) {
-		case "ch":
+		case 'ch':
 			num = parseFloat(num) * 8.8984375;
 			break;
 
-		case "em":
-		case "rem":
+		case 'em':
+		case 'rem':
 			num = parseFloat(num) * 16;
 			break;
 
-		case "ex":
+		case 'ex':
 			num = parseFloat(num) * 8.296875;
 			break;
 
-		case "px":
+		case 'px':
 			num = parseFloat(num);
 			break;
 	}
@@ -86,17 +86,15 @@ function testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
 	 * @param {string} query
 	 * @return {boolean}
 	 */
-	return function(query) {
-		if ( doubleTestTrue.test(query) ) {
+	return function (query) {
+		if (doubleTestTrue.test(query)) {
 			return true;
-		} else if ( doubleTestFalse.test(query) ) {
+		} else if (doubleTestFalse.test(query)) {
 			return false;
 		}
 		return singleTest.test(query);
-	}
+	};
 }
-
-
 
 // ----------------------------------------
 // Exports
@@ -112,20 +110,20 @@ function testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
 module.exports = function (a, b) {
 	let minA = isMinWidth(a) || isMinHeight(a);
 	let maxA = isMaxWidth(a) || isMaxHeight(a);
-	
+
 	let minB = isMinWidth(b) || isMinHeight(b);
 	let maxB = isMaxWidth(b) || isMaxHeight(b);
-	
+
 	if (minA && maxB) {
 		return -1;
 	}
 	if (maxA && minB) {
 		return 1;
 	}
-	
+
 	let lengthA = getQueryLength(a);
 	let lengthB = getQueryLength(b);
-	
+
 	if (lengthA > lengthB) {
 		if (maxA) {
 			return -1;
