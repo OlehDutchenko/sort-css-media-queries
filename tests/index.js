@@ -11,6 +11,7 @@
 // ----------------------------------------
 
 const sortCSSmq = require('../');
+const chalk = require('chalk');
 
 // ----------------------------------------
 // Helpers / Private
@@ -51,21 +52,37 @@ const queries = [
 	'only screen and (max-width: 1023px)',
 	'only screen and (max-height: 767px) and (min-height: 320px)',
 	'only screen and (max-width: 767px) and (min-width: 320px)',
-	'screen and (max-width: 639px)'
+	'screen and (max-width: 639px)',
+
+	// no units
+	'only screen and (orientation: landscape)',
+	'only screen and (orientation: portrait)',
+	'print',
+	'tv'
 ];
 
 // shuffle it
 const random = shuffleArray(queries);
+const randomString = random.concat([]).join('\n');
 
 // sort by module
-random.sort(sortCSSmq);
+const sorted = random.sort(sortCSSmq);
 
 // make strings for compare
-const correct = queries.join(',');
-const sorted = random.join(',');
+const queriesString = queries.join('\n');
+const sortedString = sorted.join('\n');
+
+console.log(chalk.yellow('\nentry mqs'));
+console.log(chalk.gray(randomString));
+
+console.log(chalk.yellow('\nafter sort'));
+console.log(chalk.gray(sortedString));
+
+console.log(chalk.yellow('\nshould be'));
+console.log(chalk.gray(queriesString));
 
 // lets test
-if (correct !== sorted) {
+if (queriesString !== sortedString) {
 	let msg = [
 		'',
 		'ERROR -----------------',
@@ -73,7 +90,7 @@ if (correct !== sorted) {
 		'Correct sort',
 		`- ${queries.join('\n- ')}`,
 		'sortCSSmq result:',
-		`- ${random.join('\n- ')}`,
+		`- ${sorted.join('\n- ')}`,
 		''
 	].join('\n\n');
 
