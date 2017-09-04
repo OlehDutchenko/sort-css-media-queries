@@ -1,0 +1,9 @@
+node_modules/
+tests/
+tmp/
+.idea
+*.log*
+.DS_Store
+thumbs.db
+*.md
+*.yml
