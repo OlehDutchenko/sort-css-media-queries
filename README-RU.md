@@ -4,18 +4,17 @@
 ![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)
 ![license](https://img.shields.io/badge/License-MIT-orange.svg)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
- 
- 
-:us: English
+
+
+:us: [English](./README.md)
 |
-:ru: [Русский язык](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/README-RU.md)
+:ru: Русский язык
 
-
-> The custom `sort` method (mobile-first) for [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) or [`pleeease`](https://www.npmjs.com/package/pleeease) (which uses css-mqpacker) or, perhaps, something else ))
+> Пользовательский метод сортировки (mobile-first) для [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) или [`pleeease`](https://www.npmjs.com/package/pleeease) (который использует css-mqpacker) или, возможно, для чего-то еще ))
 
 [![js happiness style](https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg)](https://github.com/JedWatson/happiness)
 
-## Installing
+## Установка
 
 ```shell
 npm install --save sort-css-media-queries
@@ -23,9 +22,9 @@ npm install --save sort-css-media-queries
 yarn add sort-css-media-queries
 ```
 
-## Usage
+## Использование
 
-See the original docs at first https://www.npmjs.com/package/css-mqpacker#sort;
+Для начала, ознакомтесь с оригинальной документацией https://www.npmjs.com/package/css-mqpacker#sort;
 
 ```js
 
@@ -44,17 +43,17 @@ postcss([
 
 ### mobile-first
 
-The plugin will sort your media-queries according to the mobile-first methodology. The sequence of media requests:
+Плагин будет сортировать Ваши медио запросы в соответствии и mobile-first методологией. Последовательсноть меедиа-запросов:
 
-1. `min-width` and `min-height`  from smallest to largest,
-1. `max-width` and `max-height` from largest to smallest,
-1. `min-device-width` and `min-device-height`  from smallest to largest,
-1. `max-device-width` and `max-device-height` from largest to smallest
-1. media queries without dimension values, for example `print, tv, ...`.
+1. `min-width` и `min-height`  от меньшего к большему,
+1. `max-width` и `max-height` от большего к меньшему,
+1. `min-device-width` и `min-device-height`  от меньшего к большему,
+1. `max-device-width` и `max-device-height` от большего к меньшему
+1. медиа-запросы без значений размеров, например `print, tv, ...`.
 
-Example
+Пример
 
-Media-queries list:
+Входящий список медиа-запросов:
 
 ```js
 // min-width/-height -> from smallest to largest
@@ -81,7 +80,7 @@ Media-queries list:
 'tv'
 ```
 
-Sort result:
+Результат сортировки:
 
 ```js
 'only screen and (min-width: 320px) and (max-width: 767px)',
@@ -102,18 +101,17 @@ Sort result:
 ```
 
 
-## Tests
+## Тесты
 
-1. `npm run sort` - test of sorting result
-1. `npm run happiness` - test code style
+1. `npm run sort` - тестирование метода сортировки
+1. `npm run happiness` - тестирование стиля JavaScript кода
 1. `npm test`: `npm run sort` + `npm run happiness`
 
 ---
 
-## Project Info
+## Информация о проекте
 
-* [Change log](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CHANGELOG.md)
-* [Contributing Guidelines](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CONTRIBUTING.md)
-* [Contributor Covenant Code of Conduct](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CODE_OF_CONDUCT.md)
-* [License MIT](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/LICENSE)
-
+* [История изменений](./CHANGELOG-RU.md)
+* [Руководство по содействию проекту](./CONTRIBUTING-RU.md)
+* [Кодекс поведения](./CODE_OF_CONDUCT-RU.md)
+* [Лицензия MIT](./LICENSE)

@@ -31,6 +31,8 @@ const maxHeight = /\(\s*max(-device)?-height/;
 const isMinHeight = testQuery(minMaxHeight, maxMinHeight, minHeight);
 const isMaxHeight = testQuery(maxMinHeight, minMaxHeight, maxHeight);
 
+const maxValue = Number.MAX_VALUE;
+
 /**
  * Obtain the length of the media request in pixels.
  * Copy from original source `function inspectLength (length)`
@@ -43,8 +45,8 @@ const isMaxHeight = testQuery(maxMinHeight, minMaxHeight, maxHeight);
 function getQueryLength (length) {
 	length = /(-?\d*\.?\d+)(ch|em|ex|px|rem)/.exec(length);
 
-	if (!length) {
-		return Number.MAX_VALUE;
+	if (length === null) {
+		return maxValue;
 	}
 
 	let num = length[1];
@@ -123,6 +125,14 @@ module.exports = function (a, b) {
 
 	let lengthA = getQueryLength(a);
 	let lengthB = getQueryLength(b);
+
+	if (lengthA === maxValue && lengthB === maxValue) {
+		return a.localeCompare(b);
+	} else if (lengthA === maxValue) {
+		return 1;
+	} else if (lengthB === maxValue) {
+		return -1;
+	}
 
 	if (lengthA > lengthB) {
 		if (maxA) {
