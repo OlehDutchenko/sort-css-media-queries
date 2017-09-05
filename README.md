@@ -117,7 +117,7 @@ postcss([
 
 ```
 
-The plugin will sort your desktop-queries according to the mobile-first methodology. The sequence of media requests:
+The plugin will sort your media-queries according to the desktop-first methodology. The sequence of media requests:
 
 1. `max-width` and `max-height` from largest to smallest,
 1. `max-device-width` and `max-device-height` from largest to smallest
