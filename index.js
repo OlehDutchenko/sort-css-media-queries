@@ -99,17 +99,18 @@ function testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
 }
 
 // ----------------------------------------
-// Exports
+// Public
 // ----------------------------------------
 
 /**
  * Sorting an array with media queries
+ * according to the mobile-first methodology.
  * @param {string} a
  * @param {string} b
  * @return {number} 1 / 0 / -1
  * @sourceCode
  */
-module.exports = function (a, b) {
+function sortCSSmq (a, b) {
 	let minA = isMinWidth(a) || isMinHeight(a);
 	let maxA = isMaxWidth(a) || isMaxHeight(a);
 
@@ -140,11 +141,69 @@ module.exports = function (a, b) {
 		}
 		return 1;
 	}
+
 	if (lengthA < lengthB) {
 		if (maxA) {
 			return 1;
 		}
 		return -1;
 	}
+
 	return a.localeCompare(b);
 };
+
+/**
+ * Sorting an array with media queries
+ * according to the desktop-first methodology.
+ * @param {string} a
+ * @param {string} b
+ * @return {number} 1 / 0 / -1
+ * @sourceCode
+ */
+sortCSSmq.desktopFirst = function (a, b) {
+	let minA = isMinWidth(a) || isMinHeight(a);
+	let maxA = isMaxWidth(a) || isMaxHeight(a);
+
+	let minB = isMinWidth(b) || isMinHeight(b);
+	let maxB = isMaxWidth(b) || isMaxHeight(b);
+
+	if (minA && maxB) {
+		return 1;
+	}
+	if (maxA && minB) {
+		return -1;
+	}
+
+	let lengthA = getQueryLength(a);
+	let lengthB = getQueryLength(b);
+
+	if (lengthA === maxValue && lengthB === maxValue) {
+		return a.localeCompare(b);
+	} else if (lengthA === maxValue) {
+		return 1;
+	} else if (lengthB === maxValue) {
+		return -1;
+	}
+
+	if (lengthA > lengthB) {
+		if (maxA) {
+			return -1;
+		}
+		return 1;
+	}
+
+	if (lengthA < lengthB) {
+		if (maxA) {
+			return 1;
+		}
+		return -1;
+	}
+
+	return -(a.localeCompare(b));
+}
+
+// ----------------------------------------
+// Exports
+// ----------------------------------------
+
+module.exports = sortCSSmq;

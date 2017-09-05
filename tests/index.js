@@ -38,32 +38,36 @@ function shuffleArray (array) {
 // correct sorted order
 const queries = [
 	// min-width/-height -> from smallest to largest
-	'only screen and (min-width: 320px) and (max-width: 767px)',
+	'screen and (min-width: 320px) and (max-width: 767px)',
 	'screen and (min-height: 480px)',
 	'screen and (min-height: 480px) and (min-width: 320px)',
-	'only screen and (min-width: 640px)',
+	'screen and (min-width: 640px)',
 	'screen and (min-width: 1024px)',
-	'only screen and (min-width: 1280px)',
+	'screen and (min-width: 1280px)',
 
 	// device
-	'only screen and (min-device-width: 320px) and (max-device-width: 767px)',
+	'screen and (min-device-width: 320px) and (max-device-width: 767px)',
+	'screen and (min-device-width: 480px) and (max-device-width: 767px)',
 
 	// max-width/-height <- from largest to smallest
-	'only screen and (max-width: 1023px)',
-	'only screen and (max-height: 767px) and (min-height: 320px)',
-	'only screen and (max-width: 767px) and (min-width: 320px)',
+	'screen and (max-width: 1023px)',
+	'screen and (max-height: 767px) and (min-height: 320px)',
+	'screen and (max-width: 767px) and (min-width: 320px)',
 	'screen and (max-width: 639px)',
 
 	// no units
-	'only screen and (orientation: landscape)',
-	'only screen and (orientation: portrait)',
 	'print',
+	'screen and (orientation: landscape)',
+	'screen and (orientation: portrait)',
 	'tv'
 ];
 
 // shuffle it
 const random = shuffleArray(queries);
 const randomString = random.concat([]).join('\n');
+
+const desktop = random.concat([]).sort(sortCSSmq.desktopFirst);
+console.log(desktop);
 
 // sort by module
 const sorted = random.sort(sortCSSmq);
@@ -72,13 +76,18 @@ const sorted = random.sort(sortCSSmq);
 const queriesString = queries.join('\n');
 const sortedString = sorted.join('\n');
 
-console.log(chalk.yellow('\nentry mqs'));
+console.log(chalk.blue('\n--------------'));
+console.log(chalk.blue('\n MOBILE FIRST'));
+console.log(chalk.blue('\n--------------'));
 console.log(chalk.gray(randomString));
 
-console.log(chalk.yellow('\nafter sort'));
+console.log(chalk.blue('\nentry mqs'));
+console.log(chalk.gray(randomString));
+
+console.log(chalk.blue('\nafter sort'));
 console.log(chalk.gray(sortedString));
 
-console.log(chalk.yellow('\nshould be'));
+console.log(chalk.blue('\nshould be'));
 console.log(chalk.gray(queriesString));
 
 // lets test

@@ -10,7 +10,7 @@
 |
 :ru: Русский язык
 
-> Пользовательский метод сортировки (mobile-first) для [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) или [`pleeease`](https://www.npmjs.com/package/pleeease) (который использует css-mqpacker) или, возможно, для чего-то еще ))
+> Пользовательский метод сортировки (mobile-first / desktop-first) для [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) или [`pleeease`](https://www.npmjs.com/package/pleeease) (который использует css-mqpacker) или, возможно, для чего-то еще ))
 
 [![js happiness style](https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg)](https://github.com/JedWatson/happiness)
 
@@ -43,13 +43,13 @@ postcss([
 
 ### mobile-first
 
-Плагин будет сортировать Ваши медио запросы в соответствии и mobile-first методологией. Последовательсноть меедиа-запросов:
+Плагин будет сортировать Ваши медиа запросы в соответствии с mobile-first методологией. Последовательсноть медиа-запросов:
 
 1. `min-width` и `min-height`  от меньшего к большему,
 1. `max-width` и `max-height` от большего к меньшему,
 1. `min-device-width` и `min-device-height`  от меньшего к большему,
 1. `max-device-width` и `max-device-height` от большего к меньшему
-1. медиа-запросы без значений размеров, например `print, tv, ...`.
+1. медиа-запросы без значений размеров, `print, tv, ...`.
 
 Пример
 
@@ -57,25 +57,25 @@ postcss([
 
 ```js
 // min-width/-height -> from smallest to largest
-'only screen and (min-width: 320px) and (max-width: 767px)',
+'screen and (min-width: 320px) and (max-width: 767px)',
 'screen and (min-height: 480px)',
 'screen and (min-height: 480px) and (min-width: 320px)',
-'only screen and (min-width: 640px)',
+'screen and (min-width: 640px)',
 'screen and (min-width: 1024px)',
-'only screen and (min-width: 1280px)',
+'screen and (min-width: 1280px)',
 
 // device
-'only screen and (min-device-width: 320px) and (max-device-width: 767px)',
+'screen and (min-device-width: 320px) and (max-device-width: 767px)',
 
 // max-width/-height <- from largest to smallest
-'only screen and (max-width: 1023px)',
-'only screen and (max-height: 767px) and (min-height: 320px)',
-'only screen and (max-width: 767px) and (min-width: 320px)',
+'screen and (max-width: 1023px)',
+'screen and (max-height: 767px) and (min-height: 320px)',
+'screen and (max-width: 767px) and (min-width: 320px)',
 'screen and (max-width: 639px)',
 
 // no units
-'only screen and (orientation: landscape)',
-'only screen and (orientation: portrait)',
+'screen and (orientation: landscape)',
+'screen and (orientation: portrait)',
 'print',
 'tv'
 ```
@@ -83,22 +83,46 @@ postcss([
 Результат сортировки:
 
 ```js
-'only screen and (min-width: 320px) and (max-width: 767px)',
+'screen and (min-width: 320px) and (max-width: 767px)',
 'screen and (min-height: 480px)',
 'screen and (min-height: 480px) and (min-width: 320px)',
-'only screen and (min-width: 640px)',
+'screen and (min-width: 640px)',
 'screen and (min-width: 1024px)',
-'only screen and (min-width: 1280px)',
-'only screen and (min-device-width: 320px) and (max-device-width: 767px)',
-'only screen and (max-width: 1023px)',
-'only screen and (max-height: 767px) and (min-height: 320px)',
-'only screen and (max-width: 767px) and (min-width: 320px)',
+'screen and (min-width: 1280px)',
+'screen and (min-device-width: 320px) and (max-device-width: 767px)',
+'screen and (max-width: 1023px)',
+'screen and (max-height: 767px) and (min-height: 320px)',
+'screen and (max-width: 767px) and (min-width: 320px)',
 'screen and (max-width: 639px)',
-'only screen and (orientation: landscape)',
-'only screen and (orientation: portrait)',
 'print',
+'screen and (orientation: landscape)',
+'screen and (orientation: portrait)',
 'tv'
 ```
+
+### desktop-first
+
+```js
+const sortCSSmq = require('sort-css-media-queries');
+
+// your cool code
+// ...
+
+postcss([
+  mqpacker({
+    sort: sortCSSmq.desktopFirst
+  })
+]).process(css);
+
+```
+
+Плагин будет сортировать Ваши медиа запросы в соответствии с desktop-first методологией. Последовательсноть медиа-запросов:
+
+1. `max-width` и `max-height` от большего к меньшему,
+1. `max-device-width` и `max-device-height` от большего к меньшему
+1. `min-width` и `min-height`  от меньшего к большему,
+1. `min-device-width` и `min-device-height`  от меньшего к большему,
+1. медиа-запросы без значений размеров, `print, tv, ...`.
 
 
 ## Тесты
