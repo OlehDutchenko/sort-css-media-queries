@@ -1,6 +1,6 @@
 {
   "name": "sort-css-media-queries",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "The custom `sort` method (mobile-first / desktop-first) of CSS media queries for `css-mqpacker` or `pleeease` (which uses css-mqpacker) or, perhaps, something else ))",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "media",
     "queries",
     "mobile-first",
+    "desktop-first",
     "sort"
   ],
   "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
