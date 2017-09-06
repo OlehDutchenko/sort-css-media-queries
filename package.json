@@ -37,7 +37,7 @@
   "homepage": "https://github.com/dutchenkoOleg/sort-css-media-queries#readme",
   "devDependencies": {
     "chalk": "^2.1.0",
-    "happiness": "^7.1.2",
+    "happiness": "^10.0.2",
     "snazzy": "^7.0.0"
   }
 }
