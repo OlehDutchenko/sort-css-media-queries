@@ -11,9 +11,17 @@
 
 ---
 
+### [1.3.3] - 2017-09-06
+
+#### Fixed
+
+- Fix code style
+
+---
+
 ### [1.3.1] - 2017-09-05
 
-#### Добавлено
+#### Added
 
 - `desktopFirst` sorting method
 

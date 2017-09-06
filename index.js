@@ -150,7 +150,7 @@ function sortCSSmq (a, b) {
 	}
 
 	return a.localeCompare(b);
-};
+}
 
 /**
  * Sorting an array with media queries
@@ -200,7 +200,7 @@ sortCSSmq.desktopFirst = function (a, b) {
 	}
 
 	return -(a.localeCompare(b));
-}
+};
 
 // ----------------------------------------
 // Exports
