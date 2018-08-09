@@ -108,6 +108,12 @@ function testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
  * @return {number} 1 / 0 / -1
  */
 function sortCSSmq (a, b) {
+  if (/print/.test(b)) {
+    return -1
+  } else if (/print/.test(a)) {
+    return 1
+  }
+
   let minA = isMinWidth(a) || isMinHeight(a)
   let maxA = isMaxWidth(a) || isMaxHeight(a)
 
