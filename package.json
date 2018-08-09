@@ -4,9 +4,9 @@
   "description": "The custom `sort` method (mobile-first / desktop-first) of CSS media queries for `css-mqpacker` or `pleeease` (which uses css-mqpacker) or, perhaps, something else ))",
   "main": "index.js",
   "scripts": {
-    "test": "npm run sort && npm run happiness",
+    "test": "npm run sort && npm run standard",
     "sort": "node ./tests/index.js",
-    "happiness": "happiness --verbose --fix --verbose | snazzy"
+    "standard": "standard \"index.js\" --fix"
   },
   "repository": {
     "type": "git",
@@ -36,8 +36,11 @@
   },
   "homepage": "https://github.com/dutchenkoOleg/sort-css-media-queries#readme",
   "devDependencies": {
-    "chalk": "^2.3.0",
-    "happiness": "^10.0.2",
-    "snazzy": "^7.0.0"
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-preset-env": "^1.7.0",
+    "chalk": "^2.4.1",
+    "jest": "^23.4.2",
+    "standard": "^11.0.1"
   }
 }

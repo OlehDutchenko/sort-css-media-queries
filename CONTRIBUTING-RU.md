@@ -38,15 +38,12 @@
 
 #### Стиль кода Javascript
 
-[![happiness][happiness-image]][happiness-url]
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-Этот проект использует [`happiness`][happiness-url] для поддержания стиля и согласованности кода.  
+Этот проект использует [`standard`](https://github.com/standard/standard) для поддержания стиля и согласованности кода.  
  ***Поэтому вам также нужно следовать этим стилям кода!*** 
  
-Запустите `npm run happiness` для проверки.
-
-[happiness-image]: https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg
-[happiness-url]: https://github.com/JedWatson/happiness
+Запустите `npm run standard` для проверки.
 
 #### Релизы
 

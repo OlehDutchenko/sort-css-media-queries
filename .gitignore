@@ -1,6 +1,6 @@
-.idea
-tmp
-node_modules
-npm-debug.log
+.idea/
+.cache/
+node_modules/
+*.log*
 .DS_Store
 thumbs.db

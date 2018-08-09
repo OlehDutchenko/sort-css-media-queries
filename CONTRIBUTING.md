@@ -42,16 +42,13 @@ There are a few basic ground-rules for contributors:
 
 #### Javascript Code Style
 
-[![happiness][happiness-image]][happiness-url]
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-This repository uses [`happiness`][happiness-url] to maintain code style and consistency,
+This repository uses [`standard`](https://github.com/standard/standard) to maintain code style and consistency,
 and to avoid style arguments.  
  ***So you also need to follow this code styles!*** 
  
- Run `npm run happiness` for check outs.
-
-[happiness-image]: https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg
-[happiness-url]: https://github.com/JedWatson/happiness
+ Run `npm run standard` for check outs.
 
 #### Releases
 
