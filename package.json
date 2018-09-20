@@ -1,6 +1,6 @@
 {
   "name": "sort-css-media-queries",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "The custom `sort` method (mobile-first / desktop-first) of CSS media queries for `css-mqpacker` or `pleeease` (which uses css-mqpacker) or, perhaps, something else ))",
   "main": "index.js",
   "scripts": {
