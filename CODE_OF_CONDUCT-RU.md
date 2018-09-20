@@ -46,7 +46,7 @@
 
 ---
 
-Этот Кодекс поведения адаптирован из [Contributor Covenant][homepage], версии 1.4, доступной по ссылке [http://contributor-covenant.org/version/1/4][version]
+_Этот Кодекс поведения адаптирован из [Contributor Covenant][homepage], версии 1.4, доступной по ссылке [http://contributor-covenant.org/version/1/4][version]_
 
 [homepage]: http://contributor-covenant.org
 [version]: http://contributor-covenant.org/version/1/4/
