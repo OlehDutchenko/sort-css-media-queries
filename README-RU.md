@@ -49,7 +49,11 @@ postcss([
 1. `max-width` и `max-height` от большего к меньшему,
 1. `min-device-width` и `min-device-height`  от меньшего к большему,
 1. `max-device-width` и `max-device-height` от большего к меньшему
-1. медиа-запросы без значений размеров, `print, tv, ...`.
+1. медиа-запросы без значений размеров, `tv, ttp, ...`,
+1. и в конце:
+	- `print`
+	- `print and (orientation: landscape)`
+	- `print and (orientation: portrait)`
 
 Пример
 
@@ -122,7 +126,11 @@ postcss([
 1. `max-device-width` и `max-device-height` от большего к меньшему
 1. `min-width` и `min-height`  от меньшего к большему,
 1. `min-device-width` и `min-device-height`  от меньшего к большему,
-1. медиа-запросы без значений размеров, `print, tv, ...`.
+1. медиа-запросы без значений размеров, `tv, ttp, ...`,
+1. и в конце:
+	- `print`
+	- `print and (orientation: landscape)`
+	- `print and (orientation: portrait)`
 
 
 ## Тесты

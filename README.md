@@ -50,7 +50,11 @@ The plugin will sort your media-queries according to the mobile-first methodolog
 1. `max-width` and `max-height` from largest to smallest,
 1. `min-device-width` and `min-device-height`  from smallest to largest,
 1. `max-device-width` and `max-device-height` from largest to smallest
-1. media queries without dimension values, for example `print, tv, ...`.
+1. media queries without dimension values, for example `print, tv, ...`,
+1. at the end:
+	- `print`
+	- `print and (orientation: landscape)`
+	- `print and (orientation: portrait)`
 
 Example
 
@@ -123,16 +127,11 @@ The plugin will sort your media-queries according to the desktop-first methodolo
 1. `max-device-width` and `max-device-height` from largest to smallest
 1. `min-width` and `min-height`  from smallest to largest,
 1. `min-device-width` and `min-device-height`  from smallest to largest,
-1. media queries without dimension values, `print, tv, ...`.
-
-
-
-
-## Tests
-
-1. `npm run sort` - test of sorting result
-1. `npm run happiness` - test code style
-1. `npm test`: `npm run sort` + `npm run happiness`
+1. media queries without dimension values, `tv, ...`,
+1. at the end:
+	- `print`
+	- `print and (orientation: landscape)`
+	- `print and (orientation: portrait)`
 
 ---
 
