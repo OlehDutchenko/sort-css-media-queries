@@ -8,28 +8,31 @@
  *
  * @module sort-css-media-queries
  * @author Oleg Dutchenko <dutchenko.o.wezom@gmail.com>
- * @version 1.1.1
+ * @version 1.4.0
  */
 
 // ----------------------------------------
 // Private
 // ----------------------------------------
 
-const minMaxWidth = /(!?\(\s*min(-device-)?-width).+\(\s*max(-device)?-width/
-const minWidth = /\(\s*min(-device)?-width/
-const maxMinWidth = /(!?\(\s*max(-device)?-width).+\(\s*min(-device)?-width/
-const maxWidth = /\(\s*max(-device)?-width/
+const minMaxWidth = /(!?\(\s*min(-device-)?-width).+\(\s*max(-device)?-width/i
+const minWidth = /\(\s*min(-device)?-width/i
+const maxMinWidth = /(!?\(\s*max(-device)?-width).+\(\s*min(-device)?-width/i
+const maxWidth = /\(\s*max(-device)?-width/i
 
-const isMinWidth = testQuery(minMaxWidth, maxMinWidth, minWidth)
-const isMaxWidth = testQuery(maxMinWidth, minMaxWidth, maxWidth)
+const isMinWidth = _testQuery(minMaxWidth, maxMinWidth, minWidth)
+const isMaxWidth = _testQuery(maxMinWidth, minMaxWidth, maxWidth)
 
-const minMaxHeight = /(!?\(\s*min(-device)?-height).+\(\s*max(-device)?-height/
-const minHeight = /\(\s*min(-device)?-height/
-const maxMinHeight = /(!?\(\s*max(-device)?-height).+\(\s*min(-device)?-height/
-const maxHeight = /\(\s*max(-device)?-height/
+const minMaxHeight = /(!?\(\s*min(-device)?-height).+\(\s*max(-device)?-height/i
+const minHeight = /\(\s*min(-device)?-height/i
+const maxMinHeight = /(!?\(\s*max(-device)?-height).+\(\s*min(-device)?-height/i
+const maxHeight = /\(\s*max(-device)?-height/i
 
-const isMinHeight = testQuery(minMaxHeight, maxMinHeight, minHeight)
-const isMaxHeight = testQuery(maxMinHeight, minMaxHeight, maxHeight)
+const isMinHeight = _testQuery(minMaxHeight, maxMinHeight, minHeight)
+const isMaxHeight = _testQuery(maxMinHeight, minMaxHeight, maxHeight)
+
+const isPrint = /print/i
+const isPrintOnly = /^print$/i
 
 const maxValue = Number.MAX_VALUE
 
@@ -41,7 +44,7 @@ const maxValue = Number.MAX_VALUE
  * @param {string} length
  * @return {number}
  */
-function getQueryLength (length) {
+function _getQueryLength (length) {
   length = /(-?\d*\.?\d+)(ch|em|ex|px|rem)/.exec(length)
 
   if (length === null) {
@@ -49,7 +52,7 @@ function getQueryLength (length) {
   }
 
   let number = length[1]
-  let unit = length[2]
+  const unit = length[2]
 
   switch (unit) {
     case 'ch':
@@ -81,7 +84,7 @@ function getQueryLength (length) {
  * @param {RegExp} singleTest
  * @return {Function}
  */
-function testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
+function _testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
   /**
    * @param {string} query
    * @return {boolean}
@@ -96,6 +99,38 @@ function testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
   }
 }
 
+/**
+ * @private
+ * @param {string} a
+ * @param {string} b
+ * @return {number|null}
+ */
+function _testIsPrint (a, b) {
+  const isPrintA = isPrint.test(a)
+  const isPrintOnlyA = isPrintOnly.test(a)
+
+  const isPrintB = isPrint.test(b)
+  const isPrintOnlyB = isPrintOnly.test(b)
+
+  if (isPrintA && isPrintB) {
+    if (!isPrintOnlyA && isPrintOnlyB) {
+      return 1
+    }
+    if (isPrintOnlyA && !isPrintOnlyB) {
+      return -1
+    }
+    return a.localeCompare(b)
+  }
+  if (isPrintA) {
+    return 1
+  }
+  if (isPrintB) {
+    return -1
+  }
+
+  return null
+}
+
 // ----------------------------------------
 // Public
 // ----------------------------------------
@@ -108,17 +143,16 @@ function testQuery (doubleTestTrue, doubleTestFalse, singleTest) {
  * @return {number} 1 / 0 / -1
  */
 function sortCSSmq (a, b) {
-  if (/print/.test(b)) {
-    return -1
-  } else if (/print/.test(a)) {
-    return 1
+  const testIsPrint = _testIsPrint(a, b)
+  if (testIsPrint !== null) {
+    return testIsPrint
   }
 
-  let minA = isMinWidth(a) || isMinHeight(a)
-  let maxA = isMaxWidth(a) || isMaxHeight(a)
+  const minA = isMinWidth(a) || isMinHeight(a)
+  const maxA = isMaxWidth(a) || isMaxHeight(a)
 
-  let minB = isMinWidth(b) || isMinHeight(b)
-  let maxB = isMaxWidth(b) || isMaxHeight(b)
+  const minB = isMinWidth(b) || isMinHeight(b)
+  const maxB = isMaxWidth(b) || isMaxHeight(b)
 
   if (minA && maxB) {
     return -1
@@ -127,8 +161,8 @@ function sortCSSmq (a, b) {
     return 1
   }
 
-  let lengthA = getQueryLength(a)
-  let lengthB = getQueryLength(b)
+  let lengthA = _getQueryLength(a)
+  let lengthB = _getQueryLength(b)
 
   if (lengthA === maxValue && lengthB === maxValue) {
     return a.localeCompare(b)
@@ -163,11 +197,16 @@ function sortCSSmq (a, b) {
  * @return {number} 1 / 0 / -1
  */
 sortCSSmq.desktopFirst = function (a, b) {
-  let minA = isMinWidth(a) || isMinHeight(a)
-  let maxA = isMaxWidth(a) || isMaxHeight(a)
+  const testIsPrint = _testIsPrint(a, b)
+  if (testIsPrint !== null) {
+    return testIsPrint
+  }
 
-  let minB = isMinWidth(b) || isMinHeight(b)
-  let maxB = isMaxWidth(b) || isMaxHeight(b)
+  const minA = isMinWidth(a) || isMinHeight(a)
+  const maxA = isMaxWidth(a) || isMaxHeight(a)
+
+  const minB = isMinWidth(b) || isMinHeight(b)
+  const maxB = isMaxWidth(b) || isMaxHeight(b)
 
   if (minA && maxB) {
     return 1
@@ -176,8 +215,8 @@ sortCSSmq.desktopFirst = function (a, b) {
     return -1
   }
 
-  let lengthA = getQueryLength(a)
-  let lengthB = getQueryLength(b)
+  const lengthA = _getQueryLength(a)
+  const lengthB = _getQueryLength(b)
 
   if (lengthA === maxValue && lengthB === maxValue) {
     return a.localeCompare(b)
