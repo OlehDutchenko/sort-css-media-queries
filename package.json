@@ -42,6 +42,7 @@
   "devDependencies": {
     "chalk": "^2.4.1",
     "jest": "^23.4.2",
+    "merge": "^1.2.1",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1"
   }
