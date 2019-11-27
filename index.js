@@ -8,7 +8,7 @@
  *
  * @module sort-css-media-queries
  * @author Oleg Dutchenko <dutchenko.o.wezom@gmail.com>
- * @version 1.4.0
+ * @version 1.5.0
  */
 
 // ----------------------------------------

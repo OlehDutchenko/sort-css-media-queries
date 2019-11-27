@@ -1,7 +1,8 @@
 # sort-css-media-queries
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![types](https://img.shields.io/badge/types-TypeScript-blue)
 ![npm](https://img.shields.io/badge/node-6.3.0-yellow.svg)
-![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)
 ![license](https://img.shields.io/badge/License-MIT-orange.svg)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
  
@@ -13,7 +14,11 @@
 
 > The custom `sort` method (mobile-first / desktop-first) for [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) or [`pleeease`](https://www.npmjs.com/package/pleeease) (which uses css-mqpacker) or, perhaps, something else ))
 
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+## Alternative to `mqpacker`
+
+https://github.com/hail2u/node-css-mqpacker is deprecated.  
+One of the alternative plugins may be - [postcss-sort-media-queries](https://github.com/solversgroup/postcss-sort-media-queries)
+
 
 ## Installing
 
@@ -137,7 +142,7 @@ The plugin will sort your media-queries according to the desktop-first methodolo
 
 ## Project Info
 
-* [Change log](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CHANGELOG.md)
+* [Release notes](https://github.com/dutchenkoOleg/sort-css-media-queries/releases)
 * [Contributing Guidelines](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CONTRIBUTING.md)
 * [Contributor Covenant Code of Conduct](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CODE_OF_CONDUCT.md)
 * [License MIT](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/LICENSE)

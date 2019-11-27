@@ -12,7 +12,7 @@
 
 Проверьте [баг трекер](https://github.com/dutchenkoOleg/sort-css-media-queries/issues) и [список запросов](https://github.com/dutchenkoOleg/sort-css-media-queries/pulls) на предмет уже созданных тем с их обсуждением. Возможно Вы не первые кто сталкивается с какой-то проблемой или хочет предложить свою реализацию.
 
-Также следует ознакомится с [Историей изменений проекта](./CHANGELOG-RU.md) и [Кодексом поведения](./CODE_OF_CONDUCT-RU.md).
+Также следует ознакомится с ["Релиз ноутами"](https://github.com/dutchenkoOleg/sort-css-media-queries/releases) и [Кодексом поведения](./CODE_OF_CONDUCT-RU.md).
 
 ---
 

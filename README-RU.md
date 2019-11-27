@@ -1,7 +1,8 @@
 # sort-css-media-queries
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![types](https://img.shields.io/badge/types-TypeScript-blue)
 ![npm](https://img.shields.io/badge/node-6.3.0-yellow.svg)
-![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)
 ![license](https://img.shields.io/badge/License-MIT-orange.svg)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
 
@@ -12,7 +13,11 @@
 
 > Пользовательский метод сортировки (mobile-first / desktop-first) для [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) или [`pleeease`](https://www.npmjs.com/package/pleeease) (который использует css-mqpacker) или, возможно, для чего-то еще ))
 
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+## Альтернатива `mqpacker`
+
+https://github.com/hail2u/node-css-mqpacker - устарел!  
+Одним из альтернативных плагинов может послужить - [postcss-sort-media-queries](https://github.com/solversgroup/postcss-sort-media-queries)
+
 
 ## Установка
 
@@ -143,7 +148,7 @@ postcss([
 
 ## Информация о проекте
 
-* [История изменений](./CHANGELOG-RU.md)
+* ["Релиз ноуты"](https://github.com/dutchenkoOleg/sort-css-media-queries/releases)
 * [Руководство по содействию проекту](./CONTRIBUTING-RU.md)
 * [Кодекс поведения](./CODE_OF_CONDUCT-RU.md)
 * [Лицензия MIT](./LICENSE)

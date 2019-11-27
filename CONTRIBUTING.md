@@ -13,7 +13,7 @@ Contributions welcome!
 Please search [issues](https://github.com/dutchenkoOleg/sort-css-media-queries/issues) and [pull requests](https://github.com/dutchenkoOleg/sort-css-media-queries/pulls) before adding something new to avoid duplicating
 efforts and conversations.
 
-Also, you should read the [Change log](./CHANGELOG.md) and the [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md).
+Also, you should read the [Release notes](https://github.com/dutchenkoOleg/sort-css-media-queries/releases) and the [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ---
 
