@@ -1,4 +1,4 @@
-name: Test and Build
+name: Test
 
 on: [push, pull_request]
 
@@ -13,7 +13,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install
+      - name: Install deps
         run: npm ci
-      - name: Test
-        run: npm test
+      - name: Code style
+        run: npm run standard
+      - name: Jest tests
+        run: npm run jest
