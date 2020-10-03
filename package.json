@@ -1,8 +1,12 @@
 {
   "name": "sort-css-media-queries",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "The custom `sort` method (mobile-first / desktop-first) of CSS media queries for `postcss-sort-media-queries`, `css-mqpacker` or `pleeease` (which uses css-mqpacker) or, perhaps, something else ))",
   "main": "index.js",
+  "files": [
+  	"index.js",
+  	"index.d.ts"
+  ],
   "scripts": {
     "test": "npm run standard && npm run jest",
     "jest": "jest",
