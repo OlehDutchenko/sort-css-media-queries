@@ -4,6 +4,7 @@
 ![types](https://img.shields.io/badge/types-TypeScript-blue)
 ![npm](https://img.shields.io/badge/node-6.3.0-yellow.svg)
 ![license](https://img.shields.io/badge/License-MIT-orange.svg)
+![Test](https://github.com/dutchenkoOleg/sort-css-media-queries/workflows/Test/badge.svg)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
 
 
