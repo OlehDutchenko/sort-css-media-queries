@@ -19,6 +19,9 @@
 https://github.com/hail2u/node-css-mqpacker - устарел!  
 Одним из альтернативных плагинов может послужить - [postcss-sort-media-queries](https://github.com/solversgroup/postcss-sort-media-queries)
 
+## Использование в CSS-in-JS 🚀
+
+Этот пакет теперь является частью [jss-plugin-sort-css-media-queries](https://www.npmjs.com/package/jss-plugin-sort-css-media-queries)
 
 ## Установка
 

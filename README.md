@@ -20,6 +20,9 @@
 https://github.com/hail2u/node-css-mqpacker is deprecated.  
 One of the alternative plugins may be - [postcss-sort-media-queries](https://github.com/solversgroup/postcss-sort-media-queries)
 
+## Available in CSS-in-JS 🚀
+
+This package now is a part of the [jss-plugin-sort-css-media-queries](https://www.npmjs.com/package/jss-plugin-sort-css-media-queries)
 
 ## Installing
 
