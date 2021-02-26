@@ -242,3 +242,118 @@ it(`mixed #1. desktop-first`, () => {
 
   expect(received).toBe(expected)
 })
+
+it(`multiline #1. mobile-first`, () => {
+  const receivedOrder = [
+    `@media (min-width: 48em)
+       and (max-width: 59.999em)`,
+    `@media (min-width: 40em)
+       and (max-width: 47.999em)`,
+    `@media (min-width: 15em)
+       and (max-width: 47.999em)`,
+    `@media (min-width: 2em)
+       and (max-width: 47.999em)`,
+    `@media (min-width: 20em)
+       and (max-width: 47.999em)`,
+    `@media (min-width: 3em)
+       and (max-width: 48.999em)`,
+    `@media (min-width: 31em)
+       and (max-width: 48.999em)`
+  ]
+
+  const expectedOrder = [
+    `@media (min-width: 2em)
+       and (max-width: 47.999em)`,
+    `@media (min-width: 3em)
+       and (max-width: 48.999em)`,
+    `@media (min-width: 15em)
+       and (max-width: 47.999em)`,
+    `@media (min-width: 20em)
+       and (max-width: 47.999em)`,
+    `@media (min-width: 31em)
+       and (max-width: 48.999em)`,
+    `@media (min-width: 40em)
+       and (max-width: 47.999em)`,
+    `@media (min-width: 48em)
+       and (max-width: 59.999em)`
+  ]
+
+  const expected = expectedOrder.join('\n')
+  const received = receivedOrder.sort(sortCSSmq).join('\n')
+
+  expect(received).toBe(expected)
+})
+
+it(`multiline #2. mobile-first`, () => {
+  // Edge cases
+  const receivedOrder = [
+    `
+    
+    @media (min-width: 48em)
+    
+    
+       and (max-width: 59.999em)
+       
+       `,
+    `
+    
+    
+              @media (min-width: 40em)
+              
+       and (max-width: 47.999em)
+       
+       
+       `,
+    `
+    
+    
+    
+    @media (min-width: 15em)
+    
+          
+    
+       and (max-width: 47.999em)
+       
+       
+       
+       `
+  ]
+
+  const expectedOrder = [
+    `
+    
+    
+    
+    @media (min-width: 15em)
+    
+          
+    
+       and (max-width: 47.999em)
+       
+       
+       
+       `,
+    `
+    
+    
+              @media (min-width: 40em)
+              
+       and (max-width: 47.999em)
+       
+       
+       `,
+    `
+    
+    @media (min-width: 48em)
+    
+    
+       and (max-width: 59.999em)
+       
+       `
+  ]
+
+  const expected = expectedOrder.join('\n')
+  const received = receivedOrder.sort(sortCSSmq).join('\n')
+
+  expect(received).toBe(expected)
+})
