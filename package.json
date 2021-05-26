@@ -4,16 +4,17 @@
   "description": "The custom `sort` method (mobile-first / desktop-first) of CSS media queries for `postcss-sort-media-queries`, `css-mqpacker` or `pleeease` (which uses css-mqpacker) or, perhaps, something else ))",
   "main": "lib/index.js",
   "files": [
-    "lib/index.js",
-    "lib/index.d.ts"
+    "lib"
   ],
   "scripts": {
     "test": "npm run prettier && npm run eslint && npm run jest",
-    "jest": "jest",
+    "test:fix": "npm run prettier:fix && npm run eslint:fix && npm run jest:coverage",
     "prettier": "prettier \"./{lib,tests}/**\" --check",
     "prettier:fix": "npm run prettier -- --write",
     "eslint": "eslint \"./{lib,tests}/**/*.js\"",
-    "eslint:fix": "npm run eslint -- --fix"
+    "eslint:fix": "npm run eslint -- --fix",
+    "jest": "jest",
+    "jest:coverage": "npm run jest -- --coverage"
   },
   "jest": {
     "verbose": true,
@@ -57,5 +58,8 @@
     "eslint-plugin-promise": "^5.1.0",
     "jest": "^26.4.2",
     "prettier": "^2.3.0"
+  },
+  "dependencies": {
+    "mkdirp": "^1.0.4"
   }
 }

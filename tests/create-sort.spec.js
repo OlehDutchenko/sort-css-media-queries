@@ -1,6 +1,7 @@
-const sortCSSmq = require('../lib');
+const createSort = require('../lib/create-sort');
+const sortCSSmq = createSort();
 
-it(`simple #1. mobile-first`, () => {
+test(`simple #1. mobile-first`, () => {
 	const receivedOrder = [
 		'screen and (max-width: 640px)',
 		'screen and (min-width: 980px)',
@@ -29,7 +30,7 @@ it(`simple #1. mobile-first`, () => {
 	expect(received).toBe(expected);
 });
 
-it(`simple #1. desktop-first`, () => {
+test(`simple #1. desktop-first`, () => {
 	const receivedOrder = [
 		'screen and (max-width: 640px)',
 		'screen and (min-width: 980px)',
@@ -58,7 +59,7 @@ it(`simple #1. desktop-first`, () => {
 	expect(received).toBe(expected);
 });
 
-it(`simple #2. mobile-first`, () => {
+test(`simple #2. mobile-first`, () => {
 	const receivedOrder = [
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
@@ -79,7 +80,7 @@ it(`simple #2. mobile-first`, () => {
 	expect(received).toBe(expected);
 });
 
-it(`simple #2. desktop-first`, () => {
+test(`simple #2. desktop-first`, () => {
 	const receivedOrder = [
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
@@ -100,7 +101,7 @@ it(`simple #2. desktop-first`, () => {
 	expect(received).toBe(expected);
 });
 
-it(`without dimension #1. mobile-first`, () => {
+test(`without dimension #1. mobile-first`, () => {
 	const receivedOrder = [
 		'tv',
 		'print and (orientation: landscape)',
@@ -131,7 +132,7 @@ it(`without dimension #1. mobile-first`, () => {
 	expect(received).toBe(expected);
 });
 
-it(`without dimension #1. desktop-first`, () => {
+test(`without dimension #1. desktop-first`, () => {
 	const receivedOrder = [
 		'tv',
 		'print and (orientation: landscape)',
@@ -162,7 +163,7 @@ it(`without dimension #1. desktop-first`, () => {
 	expect(received).toBe(expected);
 });
 
-it(`mixed #1. mobile-first`, () => {
+test(`mixed #1. mobile-first`, () => {
 	const receivedOrder = [
 		'tv',
 		'print and (orientation: landscape)',
@@ -195,7 +196,7 @@ it(`mixed #1. mobile-first`, () => {
 	expect(received).toBe(expected);
 });
 
-it(`mixed #1. desktop-first`, () => {
+test(`mixed #1. desktop-first`, () => {
 	const receivedOrder = [
 		'tv',
 		'print and (orientation: landscape)',
@@ -228,7 +229,7 @@ it(`mixed #1. desktop-first`, () => {
 	expect(received).toBe(expected);
 });
 
-it(`multiline #1. mobile-first`, () => {
+test(`multiline #1. mobile-first`, () => {
 	const receivedOrder = [
 		`@media (min-width: 48em)
        and (max-width: 59.999em)`,
@@ -269,7 +270,7 @@ it(`multiline #1. mobile-first`, () => {
 	expect(received).toBe(expected);
 });
 
-it(`multiline #2. mobile-first`, () => {
+test(`multiline #2. mobile-first`, () => {
 	// Edge cases
 	const receivedOrder = [
 		`

@@ -1,5 +1,6 @@
 .idea/
 .cache/
+coverage/
 node_modules/
 *.log*
 .DS_Store
