@@ -144,10 +144,42 @@ The plugin will sort your media-queries according to the desktop-first methodolo
 
 ---
 
+## Sort configuration
+
+You can create `sort-css-mq.config.json` file in the root of your project  
+or add property `sortCssMQ: {}` in your `package.json`.
+
+By this configuration you can control sorting behaviour.
+
+### Params
+
+#### `unitlessMqAlwaysFirst`
+
+- type: `boolean | undefined`
+- default value: `undefined`
+
+---
+
+## Using sorting methods directly
+
+You can import a separate sorting helper from a package
+and create your own sorting method with config as needed:
+
+```js
+import createSort from 'sort-css-media-queries/lib/create-sort';
+const mySort = createSort(); // can be initialized with configuration params => { unitlessMqAlwaysFirst: true, ... }
+
+const myCssMqList = [/* ... */];
+myCssMqList.sort(mySort);
+// or
+myCssMqList.sort(mySort.desktopFirst)
+```
+
+---
+
 ## Project Info
 
 * [Release notes](https://github.com/dutchenkoOleg/sort-css-media-queries/releases)
-* [Contributing Guidelines](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CONTRIBUTING.md)
 * [Contributor Covenant Code of Conduct](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CODE_OF_CONDUCT.md)
 * [License MIT](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/LICENSE)
 

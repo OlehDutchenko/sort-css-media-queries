@@ -7,7 +7,6 @@
 ![Test](https://github.com/dutchenkoOleg/sort-css-media-queries/workflows/Test/badge.svg)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
 
-
 :us: [English](./README.md)
 |
 :ru: Русский язык
@@ -38,33 +37,31 @@ yarn add sort-css-media-queries
 Для начала, ознакомтесь с оригинальной документацией https://www.npmjs.com/package/css-mqpacker#sort;
 
 ```js
-
 const sortCSSmq = require('sort-css-media-queries');
 
 // your cool code
 // ...
 
 postcss([
-  mqpacker({
-    sort: sortCSSmq
-  })
+	mqpacker({
+		sort: sortCSSmq
+	})
 ]).process(css);
-
 ```
 
 ### mobile-first
 
 Плагин будет сортировать Ваши медиа запросы в соответствии с mobile-first методологией. Последовательсноть медиа-запросов:
 
-1. `min-width` и `min-height`  от меньшего к большему,
+1. `min-width` и `min-height` от меньшего к большему,
 1. `max-width` и `max-height` от большего к меньшему,
-1. `min-device-width` и `min-device-height`  от меньшего к большему,
+1. `min-device-width` и `min-device-height` от меньшего к большему,
 1. `max-device-width` и `max-device-height` от большего к меньшему
 1. медиа-запросы без значений размеров, `tv, ttp, ...`,
 1. и в конце:
-	- `print`
-	- `print and (orientation: landscape)`
-	- `print and (orientation: portrait)`
+    - `print`
+    - `print and (orientation: landscape)`
+    - `print and (orientation: portrait)`
 
 Пример
 
@@ -73,46 +70,43 @@ postcss([
 ```js
 // min-width/-height -> from smallest to largest
 'screen and (min-width: 320px) and (max-width: 767px)',
-'screen and (min-height: 480px)',
-'screen and (min-height: 480px) and (min-width: 320px)',
-'screen and (min-width: 640px)',
-'screen and (min-width: 1024px)',
-'screen and (min-width: 1280px)',
-
-// device
-'screen and (min-device-width: 320px) and (max-device-width: 767px)',
-
-// max-width/-height <- from largest to smallest
-'screen and (max-width: 1023px)',
-'screen and (max-height: 767px) and (min-height: 320px)',
-'screen and (max-width: 767px) and (min-width: 320px)',
-'screen and (max-width: 639px)',
-
-// no units
-'screen and (orientation: landscape)',
-'screen and (orientation: portrait)',
-'print',
-'tv'
+	'screen and (min-height: 480px)',
+	'screen and (min-height: 480px) and (min-width: 320px)',
+	'screen and (min-width: 640px)',
+	'screen and (min-width: 1024px)',
+	'screen and (min-width: 1280px)',
+	// device
+	'screen and (min-device-width: 320px) and (max-device-width: 767px)',
+	// max-width/-height <- from largest to smallest
+	'screen and (max-width: 1023px)',
+	'screen and (max-height: 767px) and (min-height: 320px)',
+	'screen and (max-width: 767px) and (min-width: 320px)',
+	'screen and (max-width: 639px)',
+	// no units
+	'screen and (orientation: landscape)',
+	'screen and (orientation: portrait)',
+	'print',
+	'tv';
 ```
 
 Результат сортировки:
 
 ```js
 'screen and (min-width: 320px) and (max-width: 767px)',
-'screen and (min-height: 480px)',
-'screen and (min-height: 480px) and (min-width: 320px)',
-'screen and (min-width: 640px)',
-'screen and (min-width: 1024px)',
-'screen and (min-width: 1280px)',
-'screen and (min-device-width: 320px) and (max-device-width: 767px)',
-'screen and (max-width: 1023px)',
-'screen and (max-height: 767px) and (min-height: 320px)',
-'screen and (max-width: 767px) and (min-width: 320px)',
-'screen and (max-width: 639px)',
-'print',
-'screen and (orientation: landscape)',
-'screen and (orientation: portrait)',
-'tv'
+	'screen and (min-height: 480px)',
+	'screen and (min-height: 480px) and (min-width: 320px)',
+	'screen and (min-width: 640px)',
+	'screen and (min-width: 1024px)',
+	'screen and (min-width: 1280px)',
+	'screen and (min-device-width: 320px) and (max-device-width: 767px)',
+	'screen and (max-width: 1023px)',
+	'screen and (max-height: 767px) and (min-height: 320px)',
+	'screen and (max-width: 767px) and (min-width: 320px)',
+	'screen and (max-width: 639px)',
+	'print',
+	'screen and (orientation: landscape)',
+	'screen and (orientation: portrait)',
+	'tv';
 ```
 
 ### desktop-first
@@ -124,37 +118,63 @@ const sortCSSmq = require('sort-css-media-queries');
 // ...
 
 postcss([
-  mqpacker({
-    sort: sortCSSmq.desktopFirst
-  })
+	mqpacker({
+		sort: sortCSSmq.desktopFirst
+	})
 ]).process(css);
-
 ```
 
 Плагин будет сортировать Ваши медиа запросы в соответствии с desktop-first методологией. Последовательсноть медиа-запросов:
 
 1. `max-width` и `max-height` от большего к меньшему,
 1. `max-device-width` и `max-device-height` от большего к меньшему
-1. `min-width` и `min-height`  от меньшего к большему,
-1. `min-device-width` и `min-device-height`  от меньшего к большему,
+1. `min-width` и `min-height` от меньшего к большему,
+1. `min-device-width` и `min-device-height` от меньшего к большему,
 1. медиа-запросы без значений размеров, `tv, ttp, ...`,
 1. и в конце:
-	- `print`
-	- `print and (orientation: landscape)`
-	- `print and (orientation: portrait)`
+    - `print`
+    - `print and (orientation: landscape)`
+    - `print and (orientation: portrait)`
 
+---
 
-## Тесты
+## Конфигурация сортировки
 
-1. `npm run sort` - тестирование метода сортировки
-1. `npm run happiness` - тестирование стиля JavaScript кода
-1. `npm test`: `npm run sort` + `npm run happiness`
+Вы можете создать файл `sort-css-mq.config.json` в корне вашего проекта
+или добавить свойство `sortCssMQ: {}` в вашем `package.json`.
+
+Теперь вы сможете контролировать процесс сортировки.
+
+### Параметры конфигурации
+
+#### `unitlessMqAlwaysFirst`
+
+-   тип: `boolean | undefined`
+-   дефолтное значение: `undefined`
+
+---
+
+## Использование методов сортировки напрямую
+
+Вы можете импортировать отдельный хелпер сортировки из пакета
+и создать собственный метод сортировки с конфигурацией при необходимости:
+
+```js
+import createSort from 'sort-css-media-queries/lib/create-sort';
+const mySort = createSort(); // можно паратеры конфигурации => { unitlessMqAlwaysFirst: true, ... }
+
+const myCssMqList = [
+	/* ... */
+];
+myCssMqList.sort(mySort);
+// or
+myCssMqList.sort(mySort.desktopFirst);
+```
 
 ---
 
 ## Информация о проекте
 
-* ["Релиз ноуты"](https://github.com/dutchenkoOleg/sort-css-media-queries/releases)
-* [Руководство по содействию проекту](./CONTRIBUTING-RU.md)
-* [Кодекс поведения](./CODE_OF_CONDUCT-RU.md)
-* [Лицензия MIT](./LICENSE)
+-   ["Релиз ноуты"](https://github.com/dutchenkoOleg/sort-css-media-queries/releases)
+-   [Кодекс поведения](./CODE_OF_CONDUCT-RU.md)
+-   [Лицензия MIT](./LICENSE)
