@@ -24,6 +24,6 @@ jobs:
       - name: Install deps
         run: npm ci
       - name: Code style
-        run: npm run standard
+        run: npm test
       - name: Jest tests
         run: npm run jest
