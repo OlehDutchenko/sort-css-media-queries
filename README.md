@@ -146,8 +146,14 @@ The plugin will sort your media-queries according to the desktop-first methodolo
 
 ## Sort configuration
 
-You can create `sort-css-mq.config.json` file in the root of your project  
-or add property `sortCssMQ: {}` in your `package.json`.
+You can add parameters to the require.
+
+```js
+const sortCSSmq = require("sort-css-media-queries")({...options});
+```
+
+Or alternatively create a `sort-css-mq.config.json` file in the root of your project.
+Or add property `sortCssMQ: {}` in your `package.json`.
 
 By this configuration you can control sorting behaviour.
 
