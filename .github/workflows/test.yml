@@ -1,6 +1,14 @@
 name: Test
 
-on: [push, pull_request]
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   test:
@@ -16,6 +24,6 @@ jobs:
       - name: Install deps
         run: npm ci
       - name: Code style
-        run: npm run standard
+        run: npm test
       - name: Jest tests
         run: npm run jest
