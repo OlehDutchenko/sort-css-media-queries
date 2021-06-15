@@ -14,7 +14,7 @@
     "eslint": "eslint \"./{lib,tests}/**/*.js\"",
     "eslint:fix": "npm run eslint -- --fix",
     "jest": "jest",
-    "jest:coverage": "npm run jest -- --coverage"
+    "jest:coverage": "npm run jest -- --coverage && istanbul-badges-readme"
   },
   "jest": {
     "verbose": true,
@@ -56,6 +56,7 @@
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
+    "istanbul-badges-readme": "^1.4.0",
     "jest": "^26.4.2",
     "prettier": "^2.3.0"
   },

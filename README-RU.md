@@ -7,15 +7,17 @@
 ![Test](https://github.com/dutchenkoOleg/sort-css-media-queries/workflows/Test/badge.svg)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
 
-:us: [English](./README.md)
-|
-:ru: Русский язык
+> Пользовательский метод сортировки (mobile-first / desktop-first) для [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) или [`pleeease`](https://www.npmjs.com/package/pleeease) (который использует css-mqpacker) или, возможно, для чего-то еще ))
 
 [![image](https://raw.githubusercontent.com/WezomCompany/code-style/main/assets/code-style-badge-white.svg)](https://github.com/WezomCompany/code-style)
 
-> Пользовательский метод сортировки (mobile-first / desktop-first) для [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) или [`pleeease`](https://www.npmjs.com/package/pleeease) (который использует css-mqpacker) или, возможно, для чего-то еще ))
+---
 
 ##  Содержание
+
+[English](./README.md)
+|
+Русский язык
 
 - [Альтернатива `mqpacker`](#альтернатива-mqpacker)
 - [Использование в CSS-in-JS 🚀](#использование-в-css-in-js-)

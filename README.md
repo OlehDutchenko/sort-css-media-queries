@@ -5,17 +5,23 @@
 ![license](https://img.shields.io/badge/License-MIT-orange.svg)
 ![Test](https://github.com/dutchenkoOleg/sort-css-media-queries/workflows/Test/badge.svg)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
- 
- 
-:us: English
-|
-:ru: [Русский язык](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/README-RU.md)
-
-[![image](https://raw.githubusercontent.com/WezomCompany/code-style/main/assets/code-style-badge-white.svg)](https://github.com/WezomCompany/code-style)
 
 > The custom `sort` method (mobile-first / desktop-first) for [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) or [`pleeease`](https://www.npmjs.com/package/pleeease) (which uses css-mqpacker) or, perhaps, something else ))
 
+[![image](https://raw.githubusercontent.com/WezomCompany/code-style/main/assets/code-style-badge-white.svg)](https://github.com/WezomCompany/code-style)
+
+
+| Statements                                                            | Branches                                                                    | Functions                                                            | Lines                                                            |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| ![Statements](https://img.shields.io/badge/statements-95.68%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/branches-96.48%25-brightgreen.svg) | ![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/lines-95.68%25-brightgreen.svg) |
+
+---
+
 ##  Table of Contents
+
+English
+|
+[Русский язык](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/README-RU.md)
 
 - [Alternative to `mqpacker`](#alternative-to-mqpacker)
 - [Available in CSS-in-JS](#available-in-css-in-js-)
