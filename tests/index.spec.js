@@ -1,5 +1,4 @@
-const createSort = require('../lib/create-sort');
-const sortCSSmq = createSort();
+const sortCSSmq = require('../lib');
 
 test(`simple #1. mobile-first`, () => {
 	const receivedOrder = [
