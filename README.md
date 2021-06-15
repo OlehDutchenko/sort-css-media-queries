@@ -15,6 +15,18 @@
 
 > The custom `sort` method (mobile-first / desktop-first) for [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) or [`pleeease`](https://www.npmjs.com/package/pleeease) (which uses css-mqpacker) or, perhaps, something else ))
 
+##  Table of Contents
+
+- [Alternative to `mqpacker`](#alternative-to-mqpacker)
+- [Available in CSS-in-JS](#available-in-css-in-js-)
+- [Installing](#installing)
+- [Usage](#usage)
+	- [mobile-first](#mobile-first)
+	- [desktop-first](#desktop-first)
+- [Sort configuration](#sort-configuration)
+	- [Configuration options](#configuration-options)
+- [Project info](#project-info)
+
 ## Alternative to `mqpacker`
 
 https://github.com/hail2u/node-css-mqpacker is deprecated.  
@@ -146,10 +158,12 @@ The plugin will sort your media-queries according to the desktop-first methodolo
 
 ## Sort configuration
 
-You can add parameters to the require.
+You can import a separate sorting helper from a package
+and create your own sorting method with config as needed:
 
 ```js
-const sortCSSmq = require("sort-css-media-queries")({...options});
+const createSort = require("sort-css-media-queries/lib/create-sort");
+const sortCSSmq = createSort({ ...configuration });
 ```
 
 Or alternatively create a `sort-css-mq.config.json` file in the root of your project.
@@ -157,29 +171,12 @@ Or add property `sortCssMQ: {}` in your `package.json`.
 
 By this configuration you can control sorting behaviour.
 
-### Params
+### Configuration options
 
 #### `unitlessMqAlwaysFirst`
 
 - type: `boolean | undefined`
 - default value: `undefined`
-
----
-
-## Using sorting methods directly
-
-You can import a separate sorting helper from a package
-and create your own sorting method with config as needed:
-
-```js
-import createSort from 'sort-css-media-queries/lib/create-sort';
-const mySort = createSort(); // can be initialized with configuration params => { unitlessMqAlwaysFirst: true, ... }
-
-const myCssMqList = [/* ... */];
-myCssMqList.sort(mySort);
-// or
-myCssMqList.sort(mySort.desktopFirst)
-```
 
 ---
 
