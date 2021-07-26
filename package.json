@@ -58,9 +58,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "istanbul-badges-readme": "^1.4.0",
     "jest": "^26.4.2",
+    "mkdirp": "^1.0.4",
     "prettier": "^2.3.0"
-  },
-  "dependencies": {
-    "mkdirp": "^1.0.4"
   }
 }
