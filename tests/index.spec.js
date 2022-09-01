@@ -100,6 +100,17 @@ test(`simple #2. desktop-first`, () => {
 	expect(received).toBe(expected);
 });
 
+test(`simple #3. mobile-first`, () => {
+	const receivedOrder = ['screen and (min-width: 640px)', 'screen and (min-width: 0)'];
+
+	const expectedOrder = ['screen and (min-width: 0)', 'screen and (min-width: 640px)'];
+
+	const expected = expectedOrder.join('\n');
+	const received = receivedOrder.sort(sortCSSmq).join('\n');
+
+	expect(received).toBe(expected);
+});
+
 test(`without dimension #1. mobile-first`, () => {
 	const receivedOrder = [
 		'tv',
