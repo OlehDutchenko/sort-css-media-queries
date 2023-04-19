@@ -328,24 +328,52 @@ test(`multiline #1. mobile-first`, () => {
 		`@media (min-width: 3em)
        and (max-width: 48.999em)`,
 		`@media (min-width: 31em)
-       and (max-width: 48.999em)`
+       and (max-width: 48.999em)`,
+		`@media (width > 48em)
+       and (width < 59.999em)`,
+		`@media (width > 40em)
+       and (width < 47.999em)`,
+		`@media (width > 15em)
+       and (width < 47.999em)`,
+		`@media (width > 2em)
+       and (width < 47.999em)`,
+		`@media (width > 20em)
+       and (width < 47.999em)`,
+		`@media (width > 3em)
+       and (width < 48.999em)`,
+		`@media (width > 31em)
+       and (width < 48.999em)`
 	];
 
 	const expectedOrder = [
 		`@media (min-width: 2em)
        and (max-width: 47.999em)`,
+		`@media (width > 2em)
+       and (width < 47.999em)`,
 		`@media (min-width: 3em)
        and (max-width: 48.999em)`,
+		`@media (width > 3em)
+       and (width < 48.999em)`,
 		`@media (min-width: 15em)
        and (max-width: 47.999em)`,
+		`@media (width > 15em)
+       and (width < 47.999em)`,
 		`@media (min-width: 20em)
        and (max-width: 47.999em)`,
+		`@media (width > 20em)
+       and (width < 47.999em)`,
 		`@media (min-width: 31em)
        and (max-width: 48.999em)`,
+		`@media (width > 31em)
+       and (width < 48.999em)`,
 		`@media (min-width: 40em)
        and (max-width: 47.999em)`,
+		`@media (width > 40em)
+       and (width < 47.999em)`,
 		`@media (min-width: 48em)
-       and (max-width: 59.999em)`
+       and (max-width: 59.999em)`,
+		`@media (width > 48em)
+       and (width < 59.999em)`
 	];
 
 	const expected = expectedOrder.join('\n');
@@ -386,6 +414,36 @@ test(`multiline #2. mobile-first`, () => {
 
 
 
+       `,
+		`
+
+    @media (width > 48em)
+
+
+       and (width < 59.999em)
+
+       `,
+		`
+
+
+              @media (width > 40em)
+
+       and (width < 47.999em)
+
+
+       `,
+		`
+
+
+
+    @media (width > 15em)
+
+
+
+       and (width < 47.999em)
+
+
+
        `
 	];
 
@@ -406,9 +464,31 @@ test(`multiline #2. mobile-first`, () => {
 		`
 
 
+
+    @media (width > 15em)
+
+
+
+       and (width < 47.999em)
+
+
+
+       `,
+		`
+
+
               @media (min-width: 40em)
 
        and (max-width: 47.999em)
+
+
+       `,
+		`
+
+
+              @media (width > 40em)
+
+       and (width < 47.999em)
 
 
        `,
@@ -418,6 +498,14 @@ test(`multiline #2. mobile-first`, () => {
 
 
        and (max-width: 59.999em)
+
+       `,
+		`
+
+    @media (width > 48em)
+
+
+       and (width < 59.999em)
 
        `
 	];
