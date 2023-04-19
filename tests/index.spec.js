@@ -17,7 +17,7 @@ test(`simple #1. mobile-first`, () => {
 		'screen and (width > 640px)',
 		'screen and (width >= 1280px)',
 		'screen and (width > 768px)',
-		'screen and (width < 1280px)',
+		'screen and (width < 1280px)'
 	];
 
 	const expectedOrder = [
@@ -36,7 +36,7 @@ test(`simple #1. mobile-first`, () => {
 		'screen and (max-width: 768px)',
 		'screen and (width <= 768px)',
 		'screen and (max-width: 640px)',
-		'screen and (width < 640px)',
+		'screen and (width < 640px)'
 	];
 
 	const expected = expectedOrder.join('\n');
@@ -62,7 +62,7 @@ test(`simple #1. desktop-first`, () => {
 		'screen and (width > 640px)',
 		'screen and (width >= 1280px)',
 		'screen and (width >= 768px)',
-		'screen and (width <= 1280px)',
+		'screen and (width <= 1280px)'
 	];
 
 	const expectedOrder = [
@@ -81,7 +81,7 @@ test(`simple #1. desktop-first`, () => {
 		'screen and (width > 980px)',
 		'screen and (min-width: 980px)',
 		'screen and (width >= 1280px)',
-		'screen and (min-width: 1280px)',
+		'screen and (min-width: 1280px)'
 	];
 
 	const expected = expectedOrder.join('\n');
@@ -99,7 +99,7 @@ test(`simple #2. mobile-first`, () => {
 		'screen and (width < 640px)',
 		'screen and (width < 640px)',
 		'screen and (width > 1280px)',
-		'screen and (width < 640px)',
+		'screen and (width < 640px)'
 	];
 
 	const expectedOrder = [
@@ -110,7 +110,7 @@ test(`simple #2. mobile-first`, () => {
 		'screen and (max-width: 640px)',
 		'screen and (width < 640px)',
 		'screen and (width < 640px)',
-		'screen and (width < 640px)',
+		'screen and (width < 640px)'
 	];
 
 	const expected = expectedOrder.join('\n');
@@ -128,7 +128,7 @@ test(`simple #2. desktop-first`, () => {
 		'screen and (width < 640px)',
 		'screen and (width < 640px)',
 		'screen and (width > 1280px)',
-		'screen and (width < 640px)',
+		'screen and (width < 640px)'
 	];
 
 	const expectedOrder = [
@@ -139,7 +139,7 @@ test(`simple #2. desktop-first`, () => {
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
 		'screen and (width > 1280px)',
-		'screen and (min-width: 1280px)',
+		'screen and (min-width: 1280px)'
 	];
 
 	const expected = expectedOrder.join('\n');
@@ -153,14 +153,14 @@ test(`simple #3. mobile-first`, () => {
 		'screen and (min-width: 640px)',
 		'screen and (min-width: 0)',
 		'screen and (width > 640px)',
-		'screen and (width > 0)',
+		'screen and (width > 0)'
 	];
 
 	const expectedOrder = [
 		'screen and (min-width: 0)',
 		'screen and (width > 0)',
 		'screen and (min-width: 640px)',
-		'screen and (width > 640px)',
+		'screen and (width > 640px)'
 	];
 
 	const expected = expectedOrder.join('\n');
