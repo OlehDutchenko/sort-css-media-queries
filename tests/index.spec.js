@@ -321,6 +321,7 @@ test(`multiline #1. mobile-first`, () => {
        and (max-width: 47.999em)`,
 		`@media (min-width: 15em)
        and (max-width: 47.999em)`,
+		`@media (0 < width < 20px)`,
 		`@media (min-width: 2em)
        and (max-width: 47.999em)`,
 		`@media (min-width: 20em)
@@ -342,10 +343,12 @@ test(`multiline #1. mobile-first`, () => {
 		`@media (width > 3em)
        and (width < 48.999em)`,
 		`@media (width > 31em)
-       and (width < 48.999em)`
+       and (width < 48.999em)`,
+		`@media (31em < width < 48.999em )`
 	];
 
 	const expectedOrder = [
+		`@media (0 < width < 20px)`,
 		`@media (min-width: 2em)
        and (max-width: 47.999em)`,
 		`@media (width > 2em)
@@ -362,6 +365,7 @@ test(`multiline #1. mobile-first`, () => {
        and (max-width: 47.999em)`,
 		`@media (width > 20em)
        and (width < 47.999em)`,
+		`@media (31em < width < 48.999em )`,
 		`@media (min-width: 31em)
        and (max-width: 48.999em)`,
 		`@media (width > 31em)
