@@ -9,18 +9,34 @@ test(`simple #1. mobile-first`, () => {
 		'screen and (min-width: 640px)',
 		'screen and (min-width: 1280px)',
 		'screen and (min-width: 768px)',
-		'screen and (max-width: 1280px)'
+		'screen and (max-width: 1280px)',
+		'screen and (width < 640px)',
+		'screen and (width >= 980px)',
+		'screen and (width <= 980px)',
+		'screen and (width <= 768px)',
+		'screen and (width > 640px)',
+		'screen and (width >= 1280px)',
+		'screen and (width > 768px)',
+		'screen and (width < 1280px)'
 	];
 
 	const expectedOrder = [
 		'screen and (min-width: 640px)',
+		'screen and (width > 640px)',
 		'screen and (min-width: 768px)',
+		'screen and (width > 768px)',
 		'screen and (min-width: 980px)',
+		'screen and (width >= 980px)',
 		'screen and (min-width: 1280px)',
+		'screen and (width >= 1280px)',
 		'screen and (max-width: 1280px)',
+		'screen and (width < 1280px)',
 		'screen and (max-width: 980px)',
+		'screen and (width <= 980px)',
 		'screen and (max-width: 768px)',
-		'screen and (max-width: 640px)'
+		'screen and (width <= 768px)',
+		'screen and (max-width: 640px)',
+		'screen and (width < 640px)'
 	];
 
 	const expected = expectedOrder.join('\n');
@@ -38,17 +54,33 @@ test(`simple #1. desktop-first`, () => {
 		'screen and (min-width: 640px)',
 		'screen and (min-width: 1280px)',
 		'screen and (min-width: 768px)',
-		'screen and (max-width: 1280px)'
+		'screen and (max-width: 1280px)',
+		'screen and (width < 640px)',
+		'screen and (width > 980px)',
+		'screen and (width <= 980px)',
+		'screen and (width < 768px)',
+		'screen and (width > 640px)',
+		'screen and (width >= 1280px)',
+		'screen and (width >= 768px)',
+		'screen and (width <= 1280px)'
 	];
 
 	const expectedOrder = [
+		'screen and (width <= 1280px)',
 		'screen and (max-width: 1280px)',
+		'screen and (width <= 980px)',
 		'screen and (max-width: 980px)',
+		'screen and (width < 768px)',
 		'screen and (max-width: 768px)',
+		'screen and (width < 640px)',
 		'screen and (max-width: 640px)',
+		'screen and (width > 640px)',
 		'screen and (min-width: 640px)',
+		'screen and (width >= 768px)',
 		'screen and (min-width: 768px)',
+		'screen and (width > 980px)',
 		'screen and (min-width: 980px)',
+		'screen and (width >= 1280px)',
 		'screen and (min-width: 1280px)'
 	];
 
@@ -63,14 +95,22 @@ test(`simple #2. mobile-first`, () => {
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
 		'screen and (min-width: 1280px)',
-		'screen and (max-width: 640px)'
+		'screen and (max-width: 640px)',
+		'screen and (width < 640px)',
+		'screen and (width < 640px)',
+		'screen and (width > 1280px)',
+		'screen and (width < 640px)'
 	];
 
 	const expectedOrder = [
 		'screen and (min-width: 1280px)',
+		'screen and (width > 1280px)',
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
-		'screen and (max-width: 640px)'
+		'screen and (max-width: 640px)',
+		'screen and (width < 640px)',
+		'screen and (width < 640px)',
+		'screen and (width < 640px)'
 	];
 
 	const expected = expectedOrder.join('\n');
@@ -84,13 +124,21 @@ test(`simple #2. desktop-first`, () => {
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
 		'screen and (min-width: 1280px)',
-		'screen and (max-width: 640px)'
+		'screen and (max-width: 640px)',
+		'screen and (width < 640px)',
+		'screen and (width < 640px)',
+		'screen and (width > 1280px)',
+		'screen and (width < 640px)'
 	];
 
 	const expectedOrder = [
+		'screen and (width < 640px)',
+		'screen and (width < 640px)',
+		'screen and (width < 640px)',
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
+		'screen and (width > 1280px)',
 		'screen and (min-width: 1280px)'
 	];
 
@@ -101,9 +149,19 @@ test(`simple #2. desktop-first`, () => {
 });
 
 test(`simple #3. mobile-first`, () => {
-	const receivedOrder = ['screen and (min-width: 640px)', 'screen and (min-width: 0)'];
+	const receivedOrder = [
+		'screen and (min-width: 640px)',
+		'screen and (min-width: 0)',
+		'screen and (width > 640px)',
+		'screen and (width > 0)'
+	];
 
-	const expectedOrder = ['screen and (min-width: 0)', 'screen and (min-width: 640px)'];
+	const expectedOrder = [
+		'screen and (min-width: 0)',
+		'screen and (width > 0)',
+		'screen and (min-width: 640px)',
+		'screen and (width > 640px)'
+	];
 
 	const expected = expectedOrder.join('\n');
 	const received = receivedOrder.sort(sortCSSmq).join('\n');
@@ -178,20 +236,28 @@ test(`mixed #1. mobile-first`, () => {
 		'tv',
 		'print and (orientation: landscape)',
 		'screen and (min-width: 1280px)',
+		'screen and (width > 1280px)',
 		'screen and (max-width: 640px)',
+		'screen and (width < 640px)',
 		'screen and (orientation: landscape)',
 		'print',
 		'screen and (orientation: portrait)',
 		'screen and (min-width: 768px)',
+		'screen and (width > 768px)',
 		'screen and (max-width: 1280px)',
+		'screen and (width < 1280px)',
 		'print and (orientation: portrait)'
 	];
 
 	const expectedOrder = [
 		'screen and (min-width: 768px)',
+		'screen and (width > 768px)',
 		'screen and (min-width: 1280px)',
+		'screen and (width > 1280px)',
 		'screen and (max-width: 1280px)',
+		'screen and (width < 1280px)',
 		'screen and (max-width: 640px)',
+		'screen and (width < 640px)',
 		'screen and (orientation: landscape)',
 		'screen and (orientation: portrait)',
 		'tv',
@@ -211,19 +277,27 @@ test(`mixed #1. desktop-first`, () => {
 		'tv',
 		'print and (orientation: landscape)',
 		'screen and (min-width: 1280px)',
+		'screen and (width > 1280px)',
 		'screen and (max-width: 640px)',
+		'screen and (width < 640px)',
 		'screen and (orientation: landscape)',
 		'print',
 		'screen and (orientation: portrait)',
 		'screen and (min-width: 768px)',
+		'screen and (width > 768px)',
 		'screen and (max-width: 1280px)',
+		'screen and (width < 1280px)',
 		'print and (orientation: portrait)'
 	];
 
 	const expectedOrder = [
+		'screen and (width < 1280px)',
 		'screen and (max-width: 1280px)',
+		'screen and (width < 640px)',
 		'screen and (max-width: 640px)',
+		'screen and (width > 768px)',
 		'screen and (min-width: 768px)',
+		'screen and (width > 1280px)',
 		'screen and (min-width: 1280px)',
 		'screen and (orientation: landscape)',
 		'screen and (orientation: portrait)',
@@ -247,6 +321,7 @@ test(`multiline #1. mobile-first`, () => {
        and (max-width: 47.999em)`,
 		`@media (min-width: 15em)
        and (max-width: 47.999em)`,
+		`@media (0 < width < 20px)`,
 		`@media (min-width: 2em)
        and (max-width: 47.999em)`,
 		`@media (min-width: 20em)
@@ -254,24 +329,55 @@ test(`multiline #1. mobile-first`, () => {
 		`@media (min-width: 3em)
        and (max-width: 48.999em)`,
 		`@media (min-width: 31em)
-       and (max-width: 48.999em)`
+       and (max-width: 48.999em)`,
+		`@media (width > 48em)
+       and (width < 59.999em)`,
+		`@media (width > 40em)
+       and (width < 47.999em)`,
+		`@media (width > 15em)
+       and (width < 47.999em)`,
+		`@media (width > 2em)
+       and (width < 47.999em)`,
+		`@media (width > 20em)
+       and (width < 47.999em)`,
+		`@media (width > 3em)
+       and (width < 48.999em)`,
+		`@media (width > 31em)
+       and (width < 48.999em)`,
+		`@media (31em < width < 48.999em )`
 	];
 
 	const expectedOrder = [
+		`@media (0 < width < 20px)`,
 		`@media (min-width: 2em)
        and (max-width: 47.999em)`,
+		`@media (width > 2em)
+       and (width < 47.999em)`,
 		`@media (min-width: 3em)
        and (max-width: 48.999em)`,
+		`@media (width > 3em)
+       and (width < 48.999em)`,
 		`@media (min-width: 15em)
        and (max-width: 47.999em)`,
+		`@media (width > 15em)
+       and (width < 47.999em)`,
 		`@media (min-width: 20em)
        and (max-width: 47.999em)`,
+		`@media (width > 20em)
+       and (width < 47.999em)`,
+		`@media (31em < width < 48.999em )`,
 		`@media (min-width: 31em)
        and (max-width: 48.999em)`,
+		`@media (width > 31em)
+       and (width < 48.999em)`,
 		`@media (min-width: 40em)
        and (max-width: 47.999em)`,
+		`@media (width > 40em)
+       and (width < 47.999em)`,
 		`@media (min-width: 48em)
-       and (max-width: 59.999em)`
+       and (max-width: 59.999em)`,
+		`@media (width > 48em)
+       and (width < 59.999em)`
 	];
 
 	const expected = expectedOrder.join('\n');
@@ -284,67 +390,127 @@ test(`multiline #2. mobile-first`, () => {
 	// Edge cases
 	const receivedOrder = [
 		`
-    
+
     @media (min-width: 48em)
-    
-    
+
+
        and (max-width: 59.999em)
-       
+
        `,
 		`
-    
-    
+
+
               @media (min-width: 40em)
-              
+
        and (max-width: 47.999em)
-       
-       
+
+
        `,
 		`
-    
-    
-    
+
+
+
     @media (min-width: 15em)
-    
-          
-    
+
+
+
        and (max-width: 47.999em)
-       
-       
-       
+
+
+
+       `,
+		`
+
+    @media (width > 48em)
+
+
+       and (width < 59.999em)
+
+       `,
+		`
+
+
+              @media (width > 40em)
+
+       and (width < 47.999em)
+
+
+       `,
+		`
+
+
+
+    @media (width > 15em)
+
+
+
+       and (width < 47.999em)
+
+
+
        `
 	];
 
 	const expectedOrder = [
 		`
-    
-    
-    
+
+
+
     @media (min-width: 15em)
-    
-          
-    
+
+
+
        and (max-width: 47.999em)
-       
-       
-       
+
+
+
        `,
 		`
-    
-    
+
+
+
+    @media (width > 15em)
+
+
+
+       and (width < 47.999em)
+
+
+
+       `,
+		`
+
+
               @media (min-width: 40em)
-              
+
        and (max-width: 47.999em)
-       
-       
+
+
        `,
 		`
-    
+
+
+              @media (width > 40em)
+
+       and (width < 47.999em)
+
+
+       `,
+		`
+
     @media (min-width: 48em)
-    
-    
+
+
        and (max-width: 59.999em)
-       
+
+       `,
+		`
+
+    @media (width > 48em)
+
+
+       and (width < 59.999em)
+
        `
 	];
 
