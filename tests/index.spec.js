@@ -70,16 +70,16 @@ test(`simple #1. desktop-first`, () => {
 		'screen and (max-width: 1280px)',
 		'screen and (width <= 980px)',
 		'screen and (max-width: 980px)',
-		'screen and (width < 768px)',
 		'screen and (max-width: 768px)',
-		'screen and (width < 640px)',
+		'screen and (width < 768px)',
 		'screen and (max-width: 640px)',
-		'screen and (width > 640px)',
+		'screen and (width < 640px)',
 		'screen and (min-width: 640px)',
+		'screen and (width > 640px)',
 		'screen and (width >= 768px)',
 		'screen and (min-width: 768px)',
-		'screen and (width > 980px)',
 		'screen and (min-width: 980px)',
+		'screen and (width > 980px)',
 		'screen and (width >= 1280px)',
 		'screen and (min-width: 1280px)'
 	];
@@ -132,14 +132,14 @@ test(`simple #2. desktop-first`, () => {
 	];
 
 	const expectedOrder = [
-		'screen and (width < 640px)',
-		'screen and (width < 640px)',
-		'screen and (width < 640px)',
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
 		'screen and (max-width: 640px)',
-		'screen and (width > 1280px)',
-		'screen and (min-width: 1280px)'
+		'screen and (width < 640px)',
+		'screen and (width < 640px)',
+		'screen and (width < 640px)',
+		'screen and (min-width: 1280px)',
+		'screen and (width > 1280px)'
 	];
 
 	const expected = expectedOrder.join('\n');
@@ -291,14 +291,14 @@ test(`mixed #1. desktop-first`, () => {
 	];
 
 	const expectedOrder = [
-		'screen and (width < 1280px)',
 		'screen and (max-width: 1280px)',
-		'screen and (width < 640px)',
+		'screen and (width < 1280px)',
 		'screen and (max-width: 640px)',
-		'screen and (width > 768px)',
+		'screen and (width < 640px)',
 		'screen and (min-width: 768px)',
-		'screen and (width > 1280px)',
+		'screen and (width > 768px)',
 		'screen and (min-width: 1280px)',
+		'screen and (width > 1280px)',
 		'screen and (orientation: landscape)',
 		'screen and (orientation: portrait)',
 		'tv',
