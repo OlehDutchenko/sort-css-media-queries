@@ -14,7 +14,11 @@
     "eslint": "eslint \"./{lib,tests}/**/*.js\"",
     "eslint:fix": "npm run eslint -- --fix",
     "jest": "jest",
-    "jest:coverage": "npm run jest -- --coverage && istanbul-badges-readme"
+    "jest:coverage": "npm run jest -- --coverage && istanbul-badges-readme",
+    "--- DEV-DOCKER ---": "SECTION",
+    "dev-up": "docker compose -f compose.dev.yml up -d",
+    "dev-exec": "docker exec -it scmq-dev sh",
+    "dev-down": "docker compose -f compose.dev.yml down --remove-orphans"
   },
   "jest": {
     "verbose": true,

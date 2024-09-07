@@ -1,0 +1,12 @@
+name: scmq
+
+services:
+    repo:
+        build:
+            dockerfile: dev.dockerfile
+        container_name: ${COMPOSE_PROJECT_NAME}-dev
+        hostname: ${COMPOSE_PROJECT_NAME}-dev
+        working_dir: /app
+        tty: true
+        volumes:
+            - ./:/app
