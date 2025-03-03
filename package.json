@@ -20,6 +20,16 @@
     "dev-exec": "docker exec -it scmq-dev sh",
     "dev-down": "docker compose -f compose.dev.yml down --remove-orphans"
   },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js"
+    },
+    "./create-sort": {
+      "types": "./lib/create-sort.d.ts",
+      "import": "./lib/create-sort.js"
+    }
+  },
   "jest": {
     "verbose": true,
     "testURL": "http://localhost"
