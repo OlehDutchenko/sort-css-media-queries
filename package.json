@@ -6,15 +6,16 @@
   "files": [
     "lib"
   ],
+  "type": "module",
   "scripts": {
-    "test": "npm run prettier && npm run eslint && npm run jest",
-    "test:fix": "npm run prettier:fix && npm run eslint:fix && npm run jest:coverage",
+    "test": "npm run prettier && npm run eslint && npm run vitest",
+    "test:fix": "npm run prettier:fix && npm run eslint:fix && npm run vitest:coverage",
     "prettier": "prettier \"./{lib,tests}/**\" --check",
     "prettier:fix": "npm run prettier -- --write",
     "eslint": "eslint \"./{lib,tests}/**/*.js\"",
     "eslint:fix": "npm run eslint -- --fix",
-    "jest": "jest",
-    "jest:coverage": "npm run jest -- --coverage && istanbul-badges-readme",
+    "vitest": "vitest run",
+    "vitest:coverage": "npm run vitest -- --coverage && istanbul-badges-readme",
     "--- DEV-DOCKER ---": "SECTION",
     "dev-up": "docker compose -f compose.dev.yml up -d",
     "dev-exec": "docker exec -it scmq-dev sh",
@@ -29,10 +30,6 @@
       "types": "./lib/create-sort.d.ts",
       "import": "./lib/create-sort.js"
     }
-  },
-  "jest": {
-    "verbose": true,
-    "testURL": "http://localhost"
   },
   "repository": {
     "type": "git",
@@ -58,21 +55,27 @@
     "url": "https://github.com/dutchenkoOleg/sort-css-media-queries/issues"
   },
   "engines": {
-    "node": ">= 6.3.0"
+    "node": ">= 16"
   },
   "homepage": "https://github.com/dutchenkoOleg/sort-css-media-queries#readme",
   "devDependencies": {
-    "@wezom/eslint-config": "^8.0.0",
-    "chalk": "^2.4.1",
-    "eslint": "^7.27.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.30.0",
-    "eslint-plugin-jest": "^24.3.6",
+    "@eslint/js": "^9.21.0",
+    "@vitest/coverage-istanbul": "^3.0.7",
+    "chalk": "^5.4.1",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "istanbul-badges-readme": "^1.4.0",
-    "jest": "^26.4.2",
-    "mkdirp": "^1.0.4",
-    "prettier": "^2.3.0"
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-promise": "^7.2.1",
+    "globals": "^16.0.0",
+    "istanbul-badges-readme": "^1.9.0",
+    "prettier": "^3.5.3",
+    "vitest": "^3.0.7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

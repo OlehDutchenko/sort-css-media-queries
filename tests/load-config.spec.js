@@ -1,9 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const mkdirp = require('mkdirp');
+import { expect, test, describe } from 'vitest';
+import fs from 'fs';
+import path from 'path';
 
-const loadConfig = require('../lib/load-config');
-const defaultConfig = require('../sort-css-mq.config.json');
+import loadConfig from '../lib/load-config';
+import defaultConfig from '../sort-css-mq.config.json';
 
 test('load default config', () => {
 	const loadedConfig = loadConfig();
@@ -14,7 +14,7 @@ describe('load custom config', () => {
 	const customConfig = { unitlessMqAlwaysFirst: true };
 	const cwd = process.cwd();
 	const testFolder = '.cache/tests/';
-	mkdirp.sync(path.join(cwd, '.cache/tests/'));
+	fs.mkdirSync(path.join(cwd, '.cache/tests/'), { recursive: true });
 
 	const testConfigPath = path.join(testFolder, 'sort-css-mq.config.json');
 	const testConfigString = JSON.stringify(customConfig, undefined, '  ');

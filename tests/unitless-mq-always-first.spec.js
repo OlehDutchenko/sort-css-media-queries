@@ -1,4 +1,5 @@
-const createSort = require('../lib/create-sort');
+import { expect, test } from 'vitest';
+import createSort from '../lib/create-sort';
 
 test(`mixed #1. mobile first. unitlessMqAlwaysFirst: FALSE`, () => {
 	const sort = createSort({

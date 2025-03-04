@@ -23,15 +23,18 @@
 |
 [🇺🇦 Українська](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/README-UK.md)
 
-- [Alternative to `mqpacker`](#alternative-to-mqpacker)
-- [Available in CSS-in-JS](#available-in-css-in-js-)
-- [Installing](#installing)
-- [Usage](#usage)
-	- [mobile-first](#mobile-first)
-	- [desktop-first](#desktop-first)
-- [Sort configuration](#sort-configuration)
-	- [Configuration options](#configuration-options)
-- [Project info](#project-info)
+- [sort-css-media-queries](#sort-css-media-queries)
+	- [Table of Contents](#table-of-contents)
+	- [Alternative to `mqpacker`](#alternative-to-mqpacker)
+	- [Available in CSS-in-JS 🚀](#available-in-css-in-js-)
+	- [Installing](#installing)
+	- [Usage](#usage)
+		- [mobile-first](#mobile-first)
+		- [desktop-first](#desktop-first)
+	- [Sort configuration](#sort-configuration)
+		- [Configuration options](#configuration-options)
+			- [`unitlessMqAlwaysFirst`](#unitlessmqalwaysfirst)
+	- [Project Info](#project-info)
 
 ## Alternative to `mqpacker`
 
@@ -56,7 +59,7 @@ See the original docs at first https://www.npmjs.com/package/css-mqpacker#sort;
 
 ```js
 
-const sortCSSmq = require('sort-css-media-queries');
+import sortCSSmq from 'sort-css-media-queries';
 
 // your cool code
 // ...
@@ -135,7 +138,7 @@ Sort result:
 ### desktop-first
 
 ```js
-const sortCSSmq = require('sort-css-media-queries');
+import sortCSSmq from 'sort-css-media-queries';
 
 // your cool code
 // ...
@@ -168,7 +171,7 @@ You can import a separate sorting helper from a package
 and create your own sorting method with config as needed:
 
 ```js
-const createSort = require("sort-css-media-queries/lib/create-sort");
+import createSort from 'sort-css-media-queries/lib/create-sort';
 const sortCSSmq = createSort({ ...configuration });
 ```
 

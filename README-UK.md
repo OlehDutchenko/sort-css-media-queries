@@ -18,15 +18,18 @@
 
 [🇬🇧 English](./README.md) | 🇺🇦 Українська
 
-- [Альтернатива `mqpacker`](#альтернатива-mqpacker)
-- [Використання в CSS-in-JS 🚀](#використання-в-css-in-js-)
-- [Встановлення](#встановлення)
-- [Використання](#використання)
-   - [mobile-first](#mobile-first)
-   - [desktop-first](#desktop-first)
-- [Конфігурація сортування](#конфігурація-сортування)
-   - [Параметри конфігурації](#параметри-конфігурації)
-- [Інформація про проєкт](#інформація-про-проєкт)
+- [sort-css-media-queries](#sort-css-media-queries)
+  - [Зміст](#зміст)
+  - [Альтернатива `mqpacker`](#альтернатива-mqpacker)
+  - [Використання в CSS-in-JS 🚀](#використання-в-css-in-js-)
+  - [Встановлення](#встановлення)
+  - [Використання](#використання)
+    - [mobile-first](#mobile-first)
+    - [desktop-first](#desktop-first)
+  - [Конфігурація сортування](#конфігурація-сортування)
+    - [Параметри конфігурації](#параметри-конфігурації)
+      - [`unitlessMqAlwaysFirst`](#unitlessmqalwaysfirst)
+  - [Інформація про проєкт](#інформація-про-проєкт)
 
 ## Альтернатива `mqpacker`
 
@@ -51,7 +54,7 @@ yarn add sort-css-media-queries
 https://www.npmjs.com/package/css-mqpacker#sort
 
 ```js
-const sortCSSmq = require('sort-css-media-queries');
+import sortCSSmq from 'sort-css-media-queries';
 
 // your cool code
 // ...
@@ -125,7 +128,7 @@ postcss([
 ### desktop-first
 
 ```js
-const sortCSSmq = require('sort-css-media-queries');
+import sortCSSmq from 'sort-css-media-queries';
 
 // your cool code
 // ...
@@ -158,7 +161,7 @@ postcss([
 та створити власний метод сортування з конфігурацією за необхідності:
 
 ```js
-const createSort = require("sort-css-media-queries/lib/create-sort");
+import createSort from 'sort-css-media-queries/lib/create-sort';
 const sortCSSmq = createSort({ ...configuration });
 ```
 
