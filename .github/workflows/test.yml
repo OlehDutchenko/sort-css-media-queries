@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [22.x]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -25,5 +25,5 @@ jobs:
         run: npm ci
       - name: Code style
         run: npm test
-      - name: Jest tests
-        run: npm run jest
+      - name: Vitest tests
+        run: npm run vitest
