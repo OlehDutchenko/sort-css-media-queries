@@ -70,7 +70,6 @@
     "eslint-plugin-promise": "^7.2.1",
     "globals": "^16.0.0",
     "istanbul-badges-readme": "^1.9.0",
-    "mkdirp": "^3.0.1",
     "prettier": "^3.5.3",
     "vitest": "^3.0.7"
   },
