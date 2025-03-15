@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dutchenkoOleg/sort-css-media-queries.git"
+    "url": "git+https://github.com/OlehDutchenko/sort-css-media-queries.git"
   },
   "keywords": [
     "postcss",
@@ -52,12 +52,12 @@
   "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dutchenkoOleg/sort-css-media-queries/issues"
+    "url": "https://github.com/OlehDutchenko/sort-css-media-queries/issues"
   },
   "engines": {
     "node": ">= 16"
   },
-  "homepage": "https://github.com/dutchenkoOleg/sort-css-media-queries#readme",
+  "homepage": "https://github.com/OlehDutchenko/sort-css-media-queries#readme",
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@vitest/coverage-istanbul": "^3.0.7",

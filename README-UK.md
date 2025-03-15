@@ -4,7 +4,7 @@
 ![types](https://img.shields.io/badge/types-TypeScript-blue)
 ![npm](https://img.shields.io/badge/node-6.3.0-yellow.svg)
 ![license](https://img.shields.io/badge/License-MIT-orange.svg)
-![Test](https://github.com/dutchenkoOleg/sort-css-media-queries/workflows/Test/badge.svg)
+![Test](https://github.com/OlehDutchenko/sort-css-media-queries/workflows/Test/badge.svg)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
 
 > Сортування медіазапитів: `mobile-first` та `desktop-first` для [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) 
@@ -179,6 +179,6 @@ const sortCSSmq = createSort({ ...configuration });
 
 ## Інформація про проєкт
 
-* [Release notes](https://github.com/dutchenkoOleg/sort-css-media-queries/releases)
-* [Contributor Covenant Code of Conduct](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CODE_OF_CONDUCT.md)
-* [License MIT](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/LICENSE)
+* [Release notes](https://github.com/OlehDutchenko/sort-css-media-queries/releases)
+* [Contributor Covenant Code of Conduct](https://github.com/OlehDutchenko/sort-css-media-queries/blob/master/CODE_OF_CONDUCT.md)
+* [License MIT](https://github.com/OlehDutchenko/sort-css-media-queries/blob/master/LICENSE)

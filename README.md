@@ -3,7 +3,7 @@
 ![types](https://img.shields.io/badge/types-TypeScript-blue)
 ![npm](https://img.shields.io/badge/node-6.3.0-yellow.svg)
 ![license](https://img.shields.io/badge/License-MIT-orange.svg)
-![Test](https://github.com/dutchenkoOleg/sort-css-media-queries/workflows/Test/badge.svg)
+![Test](https://github.com/OlehDutchenko/sort-css-media-queries/workflows/Test/badge.svg)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/sort-css-media-queries)
 
 > The custom `sort` method (mobile-first / desktop-first) for [`css-mqpacker`](https://www.npmjs.com/package/css-mqpacker) or [`pleeease`](https://www.npmjs.com/package/pleeease) (which uses css-mqpacker) or, perhaps, something else ))
@@ -21,7 +21,7 @@
 
 🇬🇧 English
 |
-[🇺🇦 Українська](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/README-UK.md)
+[🇺🇦 Українська](https://github.com/OlehDutchenko/sort-css-media-queries/blob/master/README-UK.md)
 
 - [sort-css-media-queries](#sort-css-media-queries)
 	- [Table of Contents](#table-of-contents)
@@ -191,7 +191,7 @@ By this configuration you can control sorting behaviour.
 
 ## Project Info
 
-* [Release notes](https://github.com/dutchenkoOleg/sort-css-media-queries/releases)
-* [Contributor Covenant Code of Conduct](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/CODE_OF_CONDUCT.md)
-* [License MIT](https://github.com/dutchenkoOleg/sort-css-media-queries/blob/master/LICENSE)
+* [Release notes](https://github.com/OlehDutchenko/sort-css-media-queries/releases)
+* [Contributor Covenant Code of Conduct](https://github.com/OlehDutchenko/sort-css-media-queries/blob/master/CODE_OF_CONDUCT.md)
+* [License MIT](https://github.com/OlehDutchenko/sort-css-media-queries/blob/master/LICENSE)
 
