@@ -1,4 +1,5 @@
-const sortCSSmq = require('../lib');
+import { expect, test } from 'vitest';
+import sortCSSmq from '../lib';
 
 test(`simple #1. mobile-first`, () => {
 	const receivedOrder = [

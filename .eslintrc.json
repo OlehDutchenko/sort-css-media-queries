@@ -1,8 +1,0 @@
-{
-	"root": true,
-	"extends": ["@wezom/eslint-config", "eslint-config-prettier"],
-	"plugins": ["jest"],
-	"env": {
-		"jest/globals": true
-	}
-}
