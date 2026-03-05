@@ -161,7 +161,7 @@ postcss([
 та створити власний метод сортування з конфігурацією за необхідності:
 
 ```js
-import createSort from 'sort-css-media-queries/lib/create-sort';
+import createSort from 'sort-css-media-queries/create-sort';
 const sortCSSmq = createSort({ ...configuration });
 ```
 

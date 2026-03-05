@@ -171,7 +171,7 @@ You can import a separate sorting helper from a package
 and create your own sorting method with config as needed:
 
 ```js
-import createSort from 'sort-css-media-queries/lib/create-sort';
+import createSort from 'sort-css-media-queries/create-sort';
 const sortCSSmq = createSort({ ...configuration });
 ```
 
