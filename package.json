@@ -10,9 +10,9 @@
   "scripts": {
     "test": "npm run prettier && npm run eslint && npm run vitest",
     "test:fix": "npm run prettier:fix && npm run eslint:fix && npm run vitest:coverage",
-    "prettier": "prettier \"./{lib,tests}/**\" --check",
+    "prettier": "prettier \"lib/**\" \"tests/**\" --check",
     "prettier:fix": "npm run prettier -- --write",
-    "eslint": "eslint \"./{lib,tests}/**/*.js\"",
+    "eslint": "eslint \"lib/**/*.js\" \"tests/**/*.js\"",
     "eslint:fix": "npm run eslint -- --fix",
     "vitest": "vitest run",
     "vitest:coverage": "npm run vitest -- --coverage && istanbul-badges-readme",
