@@ -17,13 +17,16 @@ jobs:
       matrix:
         node-version: [22.x]
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - name: Enable Corepack
+        run: corepack enable
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
       - name: Install deps
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Code style
-        run: npm test
+        run: pnpm test
       - name: Vitest tests
-        run: npm run vitest
+        run: pnpm run vitest
